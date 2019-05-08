@@ -5,6 +5,7 @@
  */
 package newcalculator;
 
+import java.awt.Component;
 /**
  *
  * @author User
@@ -16,14 +17,18 @@ public class CustomToast {
     
     private String argToPrint;
     private int imageOnToast = IC_WARNING_AMBER;
+    Component parent;
     
-    CustomToast(Activity activity, String textOnToast) {   
+    CustomToast(Component parent, String textOnToast) {   
         setToastText (textOnToast);
+        this.parent = parent;
+        
+        
         
     }
     
     void show() {
-        javax.swing.JOptionPane.showMessageDialog(null, argToPrint);
+        javax.swing.JOptionPane.showMessageDialog(parent, argToPrint);
     }
 
     void setToastText(String newText) {
