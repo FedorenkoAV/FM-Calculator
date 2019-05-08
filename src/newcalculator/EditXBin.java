@@ -26,7 +26,7 @@ class EditXBin {
     private ComplexStackCalculator complexStackCalculator;
     private StatisticMode statisticMode;
     private InputDriver inputDriver;
-    private Activity activity;
+    private MainActivity activity;
 
     private boolean fixModeNumberWait;
 
@@ -61,7 +61,7 @@ class EditXBin {
         complexStackCalculator = (ComplexStackCalculator) objStore[MainActivity.CPLX];
         statisticMode = (StatisticMode) objStore[MainActivity.SD];
         inputDriver = (InputDriver) objStore[MainActivity.INPUT_DRIVER];
-        activity = (Activity) objStore[MainActivity.MAIN_ACTIVITY];
+        activity = (MainActivity) objStore[MainActivity.MAIN_ACTIVITY];
         for (int i = 0; i < objStore.length; i++) {
 
             Log.d(TAG, "В objStore[" + i + "]: " + objStore[i]);
