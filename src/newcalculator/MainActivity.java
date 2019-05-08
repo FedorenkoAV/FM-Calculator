@@ -110,7 +110,7 @@ public class MainActivity extends javax.swing.JFrame {
 
             memoryFont = modeFont.deriveFont(Font.BOLD, 16);
 
-            errorFont = modeFont.deriveFont(Font.BOLD + Font.ITALIC, 18);
+            errorFont = modeFont.deriveFont(Font.BOLD, 18);
         } catch (FileNotFoundException ex) {
             javax.swing.JOptionPane.showMessageDialog(null, ex.getLocalizedMessage());
         } catch (FontFormatException | IOException ex) {
