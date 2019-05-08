@@ -108,7 +108,7 @@ public class MainActivity extends javax.swing.JFrame {
         try {
             modeFont = Font.createFont(Font.TRUETYPE_FONT, this.getClass().getResourceAsStream("fonts/tahoma.ttf")).deriveFont(Font.PLAIN, 8);
 
-            memoryFont = modeFont.deriveFont(Font.BOLD + Font.ITALIC, 16);
+            memoryFont = modeFont.deriveFont(Font.BOLD, 16);
 
             errorFont = modeFont.deriveFont(Font.BOLD + Font.ITALIC, 18);
         } catch (FileNotFoundException ex) {
