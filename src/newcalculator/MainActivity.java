@@ -99,7 +99,7 @@ public class MainActivity extends javax.swing.JFrame {
      */
     public MainActivity() {
         System.out.println("Это релизная версия. Логов не будет.");
-        Log.d(TAG, "Начнем");        
+        Log.d(TAG, "Начнем");
         modeFont = MODE_FONT;
 
         // Теперь создаем рабочие шрифты из тех, что лежат в ресурсах
@@ -169,15 +169,14 @@ public class MainActivity extends javax.swing.JFrame {
         protocol.setLocationRelativeTo(null);
 //        protocol.setVisible(true);
 
-AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, jButtonOnC, jButtonOff, jButtonOnC,
-                    jButtonDel, jButtonSci, jButtonDrg, jButtonSin, jButtonCos, jButtonTan,
-                    jButtonExp, jButtonXPowY, jButtonSQR, jButtonDegConv, jButtonLn, jButtonLog,
-                    jButtonX2, jButtonA, jButtonB, jButtonOpenBracket, jButtonCloseBracket, jButtonXtoM,
-
-                    jButton7, jButton8, jButton9, jButtonMPlus, jButtonMR,
-                    jButton4, jButton5, jButton6, jButtonMult, jButtonDiv,
-                    jButton1, jButton2, jButton3, jButtonPlus, jButtonMinus,
-                    jButton0, jButtonDot, jButtonSign, jButtonCalc, jButtonCE};
+        AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, jButtonOnC, jButtonOff, jButtonOnC,
+            jButtonDel, jButtonSci, jButtonDrg, jButtonSin, jButtonCos, jButtonTan,
+            jButtonExp, jButtonXPowY, jButtonSQR, jButtonDegConv, jButtonLn, jButtonLog,
+            jButtonX2, jButtonA, jButtonB, jButtonOpenBracket, jButtonCloseBracket, jButtonXtoM,
+            jButton7, jButton8, jButton9, jButtonMPlus, jButtonMR,
+            jButton4, jButton5, jButton6, jButtonMult, jButtonDiv,
+            jButton1, jButton2, jButton3, jButtonPlus, jButtonMinus,
+            jButton0, jButtonDot, jButtonSign, jButtonCalc, jButtonCE};
 
         //        Создаем объект statusDisplay, который будет управлять отображением меток статуса и режима работы на дисплее
         JLabel statusDisplayLabStore[] = {jLabelShift, jLabelHyp, jLabelDeg, jLabelRad, jLabelGrad, jLabelOpenBracket, jLabelBin, jLabelOct, jLabelHex, jLabelCplx, jLabelSD, jLabelMemory, jLabelError};
@@ -297,20 +296,70 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
         }
         return (screenSizeWidth - FRAME_WIDTH) / 2;
     }
-    
+
     void finish() {
         System.exit(0);
     }
-    
-    private void myExtensionDispatcher(MyExceptions e) {
+
+    private void myExceptionsDispatcher(MyExceptions e) {
         status.onError();
 //            customToast.setToastText("Произошло пользовательское арифметическое исключение. " + e.getReason());
-            customToast.setToastText(e.getReason() + e.getMsg());
-            customToast.show();
-            Log.d(TAG, "Произошло пользовательское арифметическое исключение. " + e.getReason());
-            status.offShift();
-            status.offHyp();
+        customToast.setToastText(e.getReason() + e.getMsg());
+        customToast.show();
+        Log.d(TAG, "Произошло пользовательское арифметическое исключение. " + e.getReason());
+        status.offShift();
+        status.offHyp();
 //            status.onError();        
+    }
+
+    private void arithmeticExceptionDispatcher(ArithmeticException e) {
+        customToast.setToastText("Произошло арифметическое исключение. " + e);
+        customToast.show();
+        Log.d(TAG, "Произошло арифметическое исключение. " + e);
+        status.offShift();
+        status.offHyp();
+        status.onError();
+    }
+
+    private void numberFormatExceptionDispatcher(NumberFormatException e) {
+        e.getMessage().substring(e.getMessage().indexOf('"') + 1, e.getMessage().lastIndexOf('.'));
+        switch (e.getMessage().substring(e.getMessage().indexOf('"') + 1, e.getMessage().lastIndexOf('.'))) {
+            case ("-Infinity"):
+                customToast.setToastText("Произошла ошибка формата числа. -Infinity");
+                break;
+            case ("Infinity"):
+                customToast.setToastText("Произошла ошибка формата числа. Infinity");
+                break;
+            case ("NaN"):
+                customToast.setToastText("Произошла ошибка формата числа. NaN");
+                break;
+        }
+//            customToast.setToastText("Произошла ошибка формата числа. " + e.getMessage().substring(e.getMessage().indexOf('"') + 1, e.getMessage().lastIndexOf('.')));
+        customToast.show();
+        Log.d(TAG, "Произошла ошибка формата числа. " + e.getMessage().substring(e.getMessage().indexOf('"') + 1, e.getMessage().lastIndexOf('.')));
+        status.offShift();
+        status.offHyp();
+        status.onError();
+    }
+
+    private void exceptionDispatcher(Exception e) {
+        customToast.setToastText("Произошла неизвестная ошибка Exception. " + e);
+        customToast.show();
+        Log.d(TAG, "Произошла неизвестная ошибка. " + e);
+
+        StackTraceElement[] stackTraceElements = e.getStackTrace();
+
+        for (int i = 0; i < stackTraceElements.length; i++) {
+            Log.d(TAG, i + ": " + stackTraceElements[i].toString());
+        }
+        status.offShift();
+        status.offHyp();
+        status.onError();
+    }
+
+    private void throwableDispatcher(Throwable t) {
+        customToast.setToastText("Произошла неизвестная ошибка Throwable. " + t);
+        customToast.show();
     }
 
     /**
@@ -1444,9 +1493,21 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
                     inputDriver.buttonMinusHex();
                     break;
             }
-        } catch (MyExceptions ex) {
-            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+        } catch (MyExceptions e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            myExceptionsDispatcher(e);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonMinusActionPerformed
 
@@ -1528,7 +1589,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonDotActionPerformed
 
@@ -1554,7 +1627,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonPlusActionPerformed
 
@@ -1580,7 +1665,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonDivActionPerformed
 
@@ -1606,7 +1703,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonMultActionPerformed
 
@@ -1632,7 +1741,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonMPlusActionPerformed
 
@@ -1658,7 +1779,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonCalcActionPerformed
 
@@ -1704,7 +1837,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonCEActionPerformed
 
@@ -1750,7 +1895,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButton0ActionPerformed
 
@@ -1788,9 +1945,20 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
-
     }//GEN-LAST:event_jButtonLnActionPerformed
 
     private void jButtonXPowYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonXPowYActionPerformed
@@ -1813,9 +1981,20 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
-
     }//GEN-LAST:event_jButtonXPowYActionPerformed
 
     private void jButtonDegConvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDegConvActionPerformed
@@ -1838,9 +2017,20 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
-
     }//GEN-LAST:event_jButtonDegConvActionPerformed
 
     private void jButtonExpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExpActionPerformed
@@ -1863,7 +2053,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonExpActionPerformed
 
@@ -1914,7 +2116,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonSinActionPerformed
 
@@ -1938,9 +2152,20 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
-
     }//GEN-LAST:event_jButtonSQRActionPerformed
 
     private void jButtonLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogActionPerformed
@@ -1963,9 +2188,20 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
-
     }//GEN-LAST:event_jButtonLogActionPerformed
 
     private void jButtonCosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCosActionPerformed
@@ -1987,7 +2223,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonCosActionPerformed
 
@@ -2010,9 +2258,20 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
-
     }//GEN-LAST:event_jButtonX2ActionPerformed
 
     private void jButtonTanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTanActionPerformed
@@ -2034,9 +2293,20 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
-
     }//GEN-LAST:event_jButtonTanActionPerformed
 
     private void jButtonDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDelActionPerformed
@@ -2079,7 +2349,6 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
                 inputDriver.buttonXtoMHex();
                 break;
         }
-
     }//GEN-LAST:event_jButtonXtoMActionPerformed
 
     private void jToggleButtonHypActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButtonHypActionPerformed
@@ -2136,7 +2405,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonDrgActionPerformed
 
@@ -2159,9 +2440,20 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
-
     }//GEN-LAST:event_jButtonAActionPerformed
 
     private void jButtonBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBActionPerformed
@@ -2183,7 +2475,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonBActionPerformed
 
@@ -2209,7 +2513,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButtonOpenBracketActionPerformed
 
@@ -2232,9 +2548,20 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
-
     }//GEN-LAST:event_jButtonCloseBracketActionPerformed
 
     private void formComponentMoved(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentMoved
@@ -2481,7 +2808,19 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
-            myExtensionDispatcher(ex);
+            myExceptionsDispatcher(ex);
+        } catch (ArithmeticException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            arithmeticExceptionDispatcher(e);
+        } catch (NumberFormatException e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            numberFormatExceptionDispatcher(e);
+        } catch (Exception e) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, e);
+            exceptionDispatcher(e);
+        } catch (Throwable t) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, t);
+            throwableDispatcher(t);
         }
     }//GEN-LAST:event_jButton9ActionPerformed
 
