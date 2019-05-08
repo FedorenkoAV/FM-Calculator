@@ -35,7 +35,7 @@ public class EditX {
     private ComplexStackCalculator complexStackCalculator;
     private StatisticMode statisticMode;
     private InputDriver inputDriver;
-    private Activity activity;
+    private MainActivity activity;
     private ProtocolJFrame protocol;
 
     private boolean fixModeNumberWait;
@@ -68,7 +68,7 @@ public class EditX {
         complexStackCalculator = (ComplexStackCalculator) objStore[MainActivity.CPLX];
         statisticMode = (StatisticMode) objStore[MainActivity.SD];
         inputDriver = (InputDriver) objStore[MainActivity.INPUT_DRIVER];
-        activity = (Activity) objStore[MainActivity.MAIN_ACTIVITY];
+        activity = (MainActivity) objStore[MainActivity.MAIN_ACTIVITY];
         protocol = (ProtocolJFrame) objStore[MainActivity.PROTOCOL];
         for (int i = 0; i < objStore.length; i++) {
 
