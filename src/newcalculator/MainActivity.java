@@ -287,6 +287,17 @@ public class MainActivity extends javax.swing.JFrame {
         }
         return (screenSizeWidth - FRAME_WIDTH) / 2;
     }
+    
+    private void myExtensionDispatcher(MyExceptions e) {
+//        status.onError();
+//            customToast.setToastText("Произошло пользовательское арифметическое исключение. " + e.getReason());
+            customToast.setToastText(e.getReason() + e.getMsg());
+            customToast.show();
+            Log.d(TAG, "Произошло пользовательское арифметическое исключение. " + e.getReason());
+            status.offShift();
+            status.offHyp();
+            status.onError();        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -1421,6 +1432,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonMinusActionPerformed
 
@@ -1502,6 +1514,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonDotActionPerformed
 
@@ -1527,6 +1540,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonPlusActionPerformed
 
@@ -1552,6 +1566,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonDivActionPerformed
 
@@ -1577,6 +1592,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonMultActionPerformed
 
@@ -1602,6 +1618,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonMPlusActionPerformed
 
@@ -1627,6 +1644,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonCalcActionPerformed
 
@@ -1672,6 +1690,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonCEActionPerformed
 
@@ -1717,6 +1736,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButton0ActionPerformed
 
@@ -1754,6 +1774,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
 
     }//GEN-LAST:event_jButtonLnActionPerformed
@@ -1778,6 +1799,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
 
     }//GEN-LAST:event_jButtonXPowYActionPerformed
@@ -1802,6 +1824,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
 
     }//GEN-LAST:event_jButtonDegConvActionPerformed
@@ -1826,6 +1849,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonExpActionPerformed
 
@@ -1876,6 +1900,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonSinActionPerformed
 
@@ -1899,6 +1924,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
 
     }//GEN-LAST:event_jButtonSQRActionPerformed
@@ -1923,6 +1949,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
 
     }//GEN-LAST:event_jButtonLogActionPerformed
@@ -1946,6 +1973,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonCosActionPerformed
 
@@ -1968,6 +1996,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
 
     }//GEN-LAST:event_jButtonX2ActionPerformed
@@ -1991,6 +2020,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
 
     }//GEN-LAST:event_jButtonTanActionPerformed
@@ -2092,6 +2122,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonDrgActionPerformed
 
@@ -2114,6 +2145,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
 
     }//GEN-LAST:event_jButtonAActionPerformed
@@ -2137,6 +2169,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonBActionPerformed
 
@@ -2162,6 +2195,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButtonOpenBracketActionPerformed
 
@@ -2184,6 +2218,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
 
     }//GEN-LAST:event_jButtonCloseBracketActionPerformed
@@ -2432,6 +2467,7 @@ public class MainActivity extends javax.swing.JFrame {
             }
         } catch (MyExceptions ex) {
             Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+            myExtensionDispatcher(ex);
         }
     }//GEN-LAST:event_jButton9ActionPerformed
 
