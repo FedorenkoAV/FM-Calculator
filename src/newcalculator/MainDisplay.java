@@ -18,7 +18,7 @@ class MainDisplay {
 
     private static final String TAG = "MainDisplay";
 
-    private static final int S_TEXT_SIZE = 36;
+    private static final int S_TEXT_SIZE = 33;
     private static final int M_TEXT_SIZE = 40;
     private static final int L_TEXT_SIZE = 46;
 
