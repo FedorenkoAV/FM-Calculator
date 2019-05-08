@@ -169,6 +169,16 @@ public class MainActivity extends javax.swing.JFrame {
         protocol.setLocationRelativeTo(null);
 //        protocol.setVisible(true);
 
+AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, jButtonOnC, jButtonOff, jButtonOnC,
+                    jButtonDel, jButtonSci, jButtonDrg, jButtonSin, jButtonCos, jButtonTan,
+                    jButtonExp, jButtonXPowY, jButtonSQR, jButtonDegConv, jButtonLn, jButtonLog,
+                    jButtonX2, jButtonA, jButtonB, jButtonOpenBracket, jButtonCloseBracket, jButtonXtoM,
+
+                    jButton7, jButton8, jButton9, jButtonMPlus, jButtonMR,
+                    jButton4, jButton5, jButton6, jButtonMult, jButtonDiv,
+                    jButton1, jButton2, jButton3, jButtonPlus, jButtonMinus,
+                    jButton0, jButtonDot, jButtonSign, jButtonCalc, jButtonCE};
+
         //        Создаем объект statusDisplay, который будет управлять отображением меток статуса и режима работы на дисплее
         JLabel statusDisplayLabStore[] = {jLabelShift, jLabelHyp, jLabelDeg, jLabelRad, jLabelGrad, jLabelOpenBracket, jLabelBin, jLabelOct, jLabelHex, jLabelCplx, jLabelSD, jLabelMemory, jLabelError};
         StatusDisplay statusDisplay = new StatusDisplay(statusDisplayLabStore);
@@ -177,7 +187,7 @@ public class MainActivity extends javax.swing.JFrame {
         Log.d(TAG, "Создали объект statusDisplay, который будет управлять отображением меток статуса и режима работы на дисплее");
 
 //        Создаем объект status, который будет менять статусы и режимы работы
-        status = new Status(statusDisplay);
+        status = new Status(statusDisplay, btnStore);
         Log.d(TAG, "Создали объект status, который будет менять статусы и режимы работы" + status);
         objStore[STATUS] = status;
 //        Создаем объект mode, который будет менять режим работы на CPLX и SD
@@ -289,14 +299,14 @@ public class MainActivity extends javax.swing.JFrame {
     }
     
     private void myExtensionDispatcher(MyExceptions e) {
-//        status.onError();
+        status.onError();
 //            customToast.setToastText("Произошло пользовательское арифметическое исключение. " + e.getReason());
             customToast.setToastText(e.getReason() + e.getMsg());
             customToast.show();
             Log.d(TAG, "Произошло пользовательское арифметическое исключение. " + e.getReason());
             status.offShift();
             status.offHyp();
-            status.onError();        
+//            status.onError();        
     }
 
     /**
