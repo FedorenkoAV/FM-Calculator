@@ -20,21 +20,28 @@ public class MyExceptions extends Throwable {
     final static int INFINITY = 6;
     final static int NEGATIVE_INFINITY = 7;
     final static int NOT_NUMBER = 8;
+    final static int REDIRECT = 9;
 
-    String exp[] = {"","Деление на ноль.","Не целое.","Очень большое число.","Очень маленькое число.","Отрицательное.","Бесконечность.","Минус бесконечность.","Не число."};
+    String exp[] = {"", "Деление на ноль.", "Ожидается целое число.", "Очень большое число.", "Очень маленькое число.", "Ожидается положительное число.", "Бесконечность.", "Минус бесконечность.", "Ожидается число.", "Запрос был перенаправлен по другому адресу."};
 
-    int reason = NONE;
+    private String msg = "";
+    private int reason;
 
 
-    public MyExceptions() {
-
-    }
-
-    public MyExceptions(int reason) {
+    MyExceptions(int reason) {
         this.reason = reason;
     }
 
-    public String getReason() {
+    MyExceptions(int reason, String msg) {
+        this.reason = reason;
+        this.msg = msg;
+    }
+
+    String getReason() {
         return exp[reason];
+    }
+
+    String getMsg() {
+        return msg;
     }
 }
