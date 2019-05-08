@@ -152,7 +152,7 @@ public class MainActivity extends javax.swing.JFrame {
         initComponents(); // Рисуем все
 
 //        Activity activity = MainActivity.this;
-        Activity activity = new Activity();
+//        Activity activity = new Activity();
         Log.d(TAG, "Activity activity = MainActivity.this создана.");
 
         objStore[MAIN_ACTIVITY] = MainActivity.this;
