@@ -155,10 +155,10 @@ public class MainActivity extends javax.swing.JFrame {
         Activity activity = new Activity();
         Log.d(TAG, "Activity activity = MainActivity.this создана.");
 
-        objStore[MAIN_ACTIVITY] = activity;
+        objStore[MAIN_ACTIVITY] = MainActivity.this;
 
         //        Создаем свой тост 
-        customToast = new CustomToast(activity, "В разработке");
+        customToast = new CustomToast(this, "В разработке");
 
         objStore[TOAST] = customToast;
         Log.d(TAG, "Создали свой тост");
@@ -296,6 +296,10 @@ AbstractButton btnStore[] = {jToggleButtonShift, jToggleButtonHyp, jButtonOnC, j
             return 0;
         }
         return (screenSizeWidth - FRAME_WIDTH) / 2;
+    }
+    
+    void finish() {
+        System.exit(0);
     }
     
     private void myExtensionDispatcher(MyExceptions e) {
