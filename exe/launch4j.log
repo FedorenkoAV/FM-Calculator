@@ -1,0 +1,713 @@
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-jar "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe"
+Args length:	67/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\" d:\YandexDisk\NetBeansProjects\Calculator\dist\Calculator.jar
+Args length:	187/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\commons-math3-3.6.1.jar
+Add classpath:	d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\AbsoluteLayout.jar
+Add classpath:	d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\beansbinding-1.2.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\commons-math3-3.6.1.jar;d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\AbsoluteLayout.jar;d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\beansbinding-1.2.1.jar" d:\YandexDisk\NetBeansProjects\Calculator\dist\Calculator.jar
+Args length:	354/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\commons-math3-3.6.1.jar
+Add classpath:	d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\AbsoluteLayout.jar
+Add classpath:	d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\beansbinding-1.2.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\commons-math3-3.6.1.jar;d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\AbsoluteLayout.jar;d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\beansbinding-1.2.1.jar" d:\YandexDisk\NetBeansProjects\Calculator\dist\Calculator.jar
+Args length:	354/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\commons-math3-3.6.1.jar
+Add classpath:	d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\AbsoluteLayout.jar
+Add classpath:	d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\beansbinding-1.2.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\commons-math3-3.6.1.jar;d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\AbsoluteLayout.jar;d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\beansbinding-1.2.1.jar" d:\YandexDisk\NetBeansProjects\Calculator\dist\Calculator.jar
+Args length:	354/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\commons-math3-3.6.1.jar
+Add classpath:	d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\AbsoluteLayout.jar
+Add classpath:	d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\beansbinding-1.2.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\commons-math3-3.6.1.jar;d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\AbsoluteLayout.jar;d:\YandexDisk\NetBeansProjects\Calculator\dist\lib\beansbinding-1.2.1.jar" d:\YandexDisk\NetBeansProjects\Calculator\dist\Calculator.jar
+Args length:	354/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-jar "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe"
+Args length:	67/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Info:		Classpath not defined.
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe" D:\YandexDisk\NetBeansProjects\Calculator\dist\Calculator.jar
+Args length:	135/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\beansbinding-1.2.1.jar
+Add classpath:	lib\commons-math3-3.6.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;lib\AbsoluteLayout.jar;lib\beansbinding-1.2.1.jar;lib\commons-math3-3.6.1.jar" calculator.Calculator
+Args length:	173/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\beansbinding-1.2.1.jar
+Add classpath:	lib\commons-math3-3.6.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;lib\AbsoluteLayout.jar;lib\beansbinding-1.2.1.jar;lib\commons-math3-3.6.1.jar" calculator.Calculator
+Args length:	173/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	.lib\AbsoluteLayout.jar
+Add classpath:	.lib\beansbinding-1.2.1.jar
+Add classpath:	.lib\commons-math3-3.6.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;.lib\AbsoluteLayout.jar;.lib\beansbinding-1.2.1.jar;.lib\commons-math3-3.6.1.jar" calculator.Calculator
+Args length:	176/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	D:\YandexDisk\NetBeansProjects\Calculator\lib\AbsoluteLayout.jar
+Add classpath:	D:\YandexDisk\NetBeansProjects\Calculator\lib\beansbinding-1.2.1.jar
+Add classpath:	D:\YandexDisk\NetBeansProjects\Calculator\lib\commons-math3-3.6.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;D:\YandexDisk\NetBeansProjects\Calculator\lib\AbsoluteLayout.jar;D:\YandexDisk\NetBeansProjects\Calculator\lib\beansbinding-1.2.1.jar;D:\YandexDisk\NetBeansProjects\Calculator\lib\commons-math3-3.6.1.jar" calculator.Calculator
+Args length:	299/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Info:		Classpath not defined.
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe" calculator.Calculator
+Args length:	95/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	org\apache\commons\math3\complex\Complex
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;org\apache\commons\math3\complex\Complex" calculator.Calculator
+Args length:	136/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	lib\commons-math3-3.6.1.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\beansbinding-1.2.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;lib\commons-math3-3.6.1.jar;lib\AbsoluteLayout.jar;lib\beansbinding-1.2.1.jar" calculator.Calculator
+Args length:	173/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\beansbinding-1.2.1.jar
+Add classpath:	lib\commons-math3-3.6.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;lib\AbsoluteLayout.jar;lib\beansbinding-1.2.1.jar;lib\commons-math3-3.6.1.jar" calculator.Calculator
+Args length:	173/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\beansbinding-1.2.1.jar
+Add classpath:	lib\commons-math3-3.6.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;lib\AbsoluteLayout.jar;lib\beansbinding-1.2.1.jar;lib\commons-math3-3.6.1.jar" calculator.Calculator
+Args length:	173/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+Bundled JRE:	d:\Downloads\Java\jre-8u102-windows-i586.exe
+Check launcher:	d:\Downloads\Java\jre-8u102-windows-i586.exe\bin\javaw.exe (not found)
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\IBM\Java2 Runtime Environment...
+Error msg:	This application requires a Java Runtime Environment 1.4.0
+Open URL:	http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jre-8u102-windows-i586.exe
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+Bundled JRE:	d:\Downloads\Java\jre-8u102-windows-i586.exe
+Check launcher:	d:\Downloads\Java\jre-8u102-windows-i586.exe\bin\javaw.exe (not found)
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\beansbinding-1.2.1.jar
+Add classpath:	lib\commons-math3-3.6.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;lib\AbsoluteLayout.jar;lib\beansbinding-1.2.1.jar;lib\commons-math3-3.6.1.jar" calculator.Calculator
+Args length:	173/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+Bundled JRE:	d:\Downloads\Java\jre-8u102-windows-i586.exe
+Check launcher:	d:\Downloads\Java\jre-8u102-windows-i586.exe\bin\javaw.exe (not found)
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\beansbinding-1.2.1.jar
+Add classpath:	lib\commons-math3-3.6.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;lib\AbsoluteLayout.jar;lib\beansbinding-1.2.1.jar;lib\commons-math3-3.6.1.jar" calculator.Calculator
+Args length:	173/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+Bundled JRE:	.\jre
+Check launcher:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.\jre\bin\javaw.exe (not found)
+Error msg:	This application was configured to use a bundled Java Runtime Environment but the runtime is missing or corrupted.
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+Bundled JRE:	.\jre
+Check launcher:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.\jre\bin\javaw.exe (not found)
+Error msg:	This application was configured to use a bundled Java Runtime Environment but the runtime is missing or corrupted.
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+Bundled JRE:	.
+Check launcher:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.\bin\javaw.exe (not found)
+Error msg:	This application was configured to use a bundled Java Runtime Environment but the runtime is missing or corrupted.
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+Bundled JRE:	.\jre
+Check launcher:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.\jre\bin\javaw.exe (OK)
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\beansbinding-1.2.1.jar
+Add classpath:	lib\commons-math3-3.6.1.jar
+Launcher:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;lib\AbsoluteLayout.jar;lib\beansbinding-1.2.1.jar;lib\commons-math3-3.6.1.jar" calculator.Calculator
+Args length:	173/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+Bundled JRE:	.\jre
+Check launcher:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.\jre\bin\javaw.exe (OK)
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\beansbinding-1.2.1.jar
+Add classpath:	lib\commons-math3-3.6.1.jar
+Launcher:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;lib\AbsoluteLayout.jar;lib\beansbinding-1.2.1.jar;lib\commons-math3-3.6.1.jar" calculator.Calculator
+Args length:	173/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+Bundled JRE:	.\jre
+Check launcher:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.\jre\bin\javaw.exe (not found)
+Error msg:	This application was configured to use a bundled Java Runtime Environment but the runtime is missing or corrupted.
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+Bundled JRE:	.\jre
+Check launcher:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.\jre\bin\javaw.exe (not found)
+Error msg:	This application was configured to use a bundled Java Runtime Environment but the runtime is missing or corrupted.
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+Bundled JRE:	.\jre
+Check launcher:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.\jre\bin\javaw.exe (not found)
+Error msg:	This application was configured to use a bundled Java Runtime Environment but the runtime is missing or corrupted.
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		no
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8
+Check launcher:	D:\YandexDisk\NetBeansProjects\Calculator\exe\jre\bin\javaw.exe (not found)
+Ignore:		1.8
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_102
+Check launcher:	D:\YandexDisk\NetBeansProjects\Calculator\exe\jre\bin\javaw.exe (not found)
+Ignore:		1.8.0_102
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_102
+Check launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe (OK)
+Match:		1.8.0_102
+Runtime used:	1.8.0_102 (32-bit)
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\beansbinding-1.2.1.jar
+Add classpath:	lib\commons-math3-3.6.1.jar
+Launcher:	C:\Program Files\Java\jdk1.8.0_102\jre\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;lib\AbsoluteLayout.jar;lib\beansbinding-1.2.1.jar;lib\commons-math3-3.6.1.jar" calculator.Calculator
+Args length:	173/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		yes
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+64-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8
+Check launcher:	C:\Program Files\Java\jre1.8.0_131\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_131
+Check launcher:	C:\Program Files\Java\jre1.8.0_131\bin\javaw.exe (OK)
+Match:		1.8.0_131
+64-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Ignore:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_131
+Ignore:		1.8.0_131
+Runtime used:	1.8.0_131 (64-bit)
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\beansbinding-1.2.1.jar
+Add classpath:	lib\commons-math3-3.6.1.jar
+Launcher:	C:\Program Files\Java\jre1.8.0_131\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe;lib\AbsoluteLayout.jar;lib\beansbinding-1.2.1.jar;lib\commons-math3-3.6.1.jar" calculator.Calculator
+Args length:	173/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		yes
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+64-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8
+Check launcher:	C:\Program Files\Java\jre1.8.0_131\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_131
+Check launcher:	C:\Program Files\Java\jre1.8.0_131\bin\javaw.exe (OK)
+Match:		1.8.0_131
+64-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Ignore:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_131
+Ignore:		1.8.0_131
+Runtime used:	1.8.0_131 (64-bit)
+Launcher:	C:\Program Files\Java\jre1.8.0_131\bin\javaw.exe
+Launcher args:	-jar "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe"
+Args length:	67/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		yes
+Working dir:	D:\YandexDisk\NetBeansProjects\Calculator\exe\.
+64-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8
+Check launcher:	C:\Program Files\Java\jre1.8.0_131\bin\javaw.exe (OK)
+Match:		1.8
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_131
+Check launcher:	C:\Program Files\Java\jre1.8.0_131\bin\javaw.exe (OK)
+Match:		1.8.0_131
+64-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8
+Ignore:		1.8
+Check:		SOFTWARE\JavaSoft\Java Development Kit\1.8.0_131
+Ignore:		1.8.0_131
+Runtime used:	1.8.0_131 (64-bit)
+Launcher:	C:\Program Files\Java\jre1.8.0_131\bin\javaw.exe
+Launcher args:	-jar "D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe"
+Args length:	67/32768 chars
+Exit code:	0
+
+
+Version:	3.9
+CmdLine:	D:\YandexDisk\NetBeansProjects\Calculator\exe\Calculator.exe --l4j-debug
+WOW64:		yes
+Error:		Instance already exists.
+
+
+Version:	3.10
+CmdLine:	D:\YandexDisk\NetBeansProjects\NewCalculator\exe\FMCalculator.exe --l4j-debug
+WOW64:		yes
+Working dir:	D:\YandexDisk\NetBeansProjects\NewCalculator\exe\.
+Java min ver:	1.8.0
+Java max ver:	
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8
+Ignore:		1.8
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_144
+Check launcher:	C:\Program Files (x86)\Java\jre1.8.0_144\bin\javaw.exe (OK)
+Match:		1.8.0_144
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+32-bit search:	SOFTWARE\JavaSoft\JRE...
+32-bit search:	SOFTWARE\JavaSoft\JDK...
+Runtime used:	1.8.0_144 (32-bit)
+Main class:	calculator.Calculator
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\beansbinding-1.2.1.jar
+Add classpath:	lib\commons-math3-3.6.1.jar
+Add classpath:	lib\ini4j-0.5.4.jar
+Launcher:	C:\Program Files (x86)\Java\jre1.8.0_144\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\NewCalculator\exe\FMCalculator.exe;lib\AbsoluteLayout.jar;lib\beansbinding-1.2.1.jar;lib\commons-math3-3.6.1.jar;lib\ini4j-0.5.4.jar" calculator.Calculator
+Args length:	198/32768 chars
+C:\Program Files (x86)\Java\jre1.8.0_144Exit code:	0
+
+
+Version:	3.10
+CmdLine:	D:\YandexDisk\NetBeansProjects\NewCalculator\exe\FMCalculator.exe --l4j-debug
+WOW64:		yes
+Working dir:	D:\YandexDisk\NetBeansProjects\NewCalculator\exe\.
+Java min ver:	1.8.0
+Java max ver:	
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8
+Ignore:		1.8
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_144
+Check launcher:	C:\Program Files (x86)\Java\jre1.8.0_144\bin\javaw.exe (OK)
+Match:		1.8.0_144
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+32-bit search:	SOFTWARE\JavaSoft\JRE...
+32-bit search:	SOFTWARE\JavaSoft\JDK...
+Runtime used:	1.8.0_144 (32-bit)
+Main class:	newcalculator.MainActivity
+Add classpath:	lib\commons-math3-3.6.1.jar
+Add classpath:	lib\ini4j-0.5.4.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\commons-lang3-3.6.jar
+Launcher:	C:\Program Files (x86)\Java\jre1.8.0_144\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\NewCalculator\exe\FMCalculator.exe;lib\commons-math3-3.6.1.jar;lib\ini4j-0.5.4.jar;lib\AbsoluteLayout.jar;lib\commons-lang3-3.6.jar" newcalculator.MainActivity
+Args length:	202/32768 chars
+C:\Program Files (x86)\Java\jre1.8.0_144
+
+Version:	3.10
+CmdLine:	D:\YandexDisk\NetBeansProjects\NewCalculator\exe\FMCalculator.exe --l4j-debug
+WOW64:		yes
+Working dir:	D:\YandexDisk\NetBeansProjects\NewCalculator\exe\.
+Java min ver:	1.8.0
+Java max ver:	
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8
+Ignore:		1.8
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_144
+Check launcher:	C:\Program Files (x86)\Java\jre1.8.0_144\bin\javaw.exe (OK)
+Match:		1.8.0_144
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+32-bit search:	SOFTWARE\JavaSoft\JRE...
+32-bit search:	SOFTWARE\JavaSoft\JDK...
+Runtime used:	1.8.0_144 (32-bit)
+Main class:	newcalculator.MainActivity
+Add classpath:	lib\commons-math3-3.6.1.jar
+Add classpath:	lib\ini4j-0.5.4.jar
+Add classpath:	lib\AbsoluteLayout.jar
+Add classpath:	lib\commons-lang3-3.6.jar
+Launcher:	C:\Program Files (x86)\Java\jre1.8.0_144\bin\javaw.exe
+Launcher args:	-classpath "D:\YandexDisk\NetBeansProjects\NewCalculator\exe\FMCalculator.exe;lib\commons-math3-3.6.1.jar;lib\ini4j-0.5.4.jar;lib\AbsoluteLayout.jar;lib\commons-lang3-3.6.jar" newcalculator.MainActivity
+Args length:	202/32768 chars
+C:\Program Files (x86)\Java\jre1.8.0_144
+
+Version:	3.10
+CmdLine:	d:\JavaProjects\NetBeansProjects\NewCalculator\exe\FMCalculator.exe --l4j-debug
+WOW64:		yes
+Working dir:	d:\JavaProjects\NetBeansProjects\NewCalculator\exe\.
+Java min ver:	1.8.0
+Java max ver:	
+32-bit search:	SOFTWARE\JavaSoft\Java Runtime Environment...
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8
+Ignore:		1.8
+Check:		SOFTWARE\JavaSoft\Java Runtime Environment\1.8.0_171
+Check launcher:	C:\Program Files (x86)\Java\jre1.8.0_171\bin\javaw.exe (OK)
+Match:		1.8.0_171
+32-bit search:	SOFTWARE\JavaSoft\Java Development Kit...
+32-bit search:	SOFTWARE\JavaSoft\JRE...
+32-bit search:	SOFTWARE\JavaSoft\JDK...
+Runtime used:	1.8.0_171 (32-bit)
+Main class:	newcalculator.MainActivity
+Info:		Classpath not defined.
+Launcher:	C:\Program Files (x86)\Java\jre1.8.0_171\bin\javaw.exe
+Launcher args:	-classpath "d:\JavaProjects\NetBeansProjects\NewCalculator\exe\FMCalculator.exe" newcalculator.MainActivity
+Args length:	107/32768 chars
+C:\Program Files (x86)\Java\jre1.8.0_171
