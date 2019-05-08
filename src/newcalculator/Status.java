@@ -5,6 +5,9 @@
  */
 package newcalculator;
 
+import javax.swing.AbstractButton;
+
+
 /**
  *
  * @author User
@@ -16,9 +19,11 @@ public class Status {
     private boolean memory = false;
     private boolean error = false;
     private StatusDisplay statusDisplay;
+    AbstractButton btnStore[];
 
-    Status(StatusDisplay statusDisplay) {
+    Status(StatusDisplay statusDisplay, AbstractButton btnStore[]) {
         this.statusDisplay = statusDisplay;
+        this.btnStore = btnStore;
 
     }
 
@@ -95,10 +100,18 @@ public class Status {
     void onError() {
         error = true;
         statusDisplay.onError();
+        for (AbstractButton btn : btnStore) {
+            btn.setEnabled(false);
+        }
+        btnStore[4].setEnabled(true);
+        btnStore[5].setEnabled(true);
     }
 
     void offError() {
         error = false;
         statusDisplay.offError();
+        for (AbstractButton btn : btnStore) {
+            btn.setEnabled(true);
+        }
     }
 }
