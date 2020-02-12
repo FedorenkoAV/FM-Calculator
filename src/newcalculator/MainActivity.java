@@ -2594,8 +2594,9 @@ public class MainActivity extends javax.swing.JFrame {
 //            int protocolXcoord = mainWindowXCoord + mainWindowWidth - this.getInsets().left - this.getInsets().right;
             int protocolYcoord = mainWindowYCoord;
             protocol.setLocation(protocolXcoord, protocolYcoord);
-            protocol.setSize(protocol.getWidth(), mainWindowHeight);
+            protocol.setSize(protocol.getWidth(), mainWindowHeight);            
             protocol.setVisible(true);
+            protocol.toFront();            
         } else {
             protocol.setVisible(false);
         }
