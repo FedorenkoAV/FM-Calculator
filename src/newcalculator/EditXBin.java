@@ -64,43 +64,43 @@ class EditXBin {
         activity = (MainActivity) objStore[MainActivity.MAIN_ACTIVITY];
         for (int i = 0; i < objStore.length; i++) {
 
-            Log.d(TAG, "В objStore[" + i + "]: " + objStore[i]);
+            L.d(TAG, "В objStore[" + i + "]: " + objStore[i]);
         }
         customToast = new CustomToast(activity, "Проба");
-        Log.d(TAG, "Создали CustomToast");
+        L.d(TAG, "Создали CustomToast");
         status.offError();
-        Log.d(TAG, "Выключили ошибку");
+        L.d(TAG, "Выключили ошибку");
         newInput = true;
         calcpress = false;
         newArg();
-        Log.d(TAG, "Создали новый ArgXBin.");
+        L.d(TAG, "Создали новый ArgXBin.");
 //        makeArg();
-//        Log.d(TAG, "Отобразили на дисплее.");
-        Log.d(TAG, "EditXBin успешно создан!");
+//        L.d(TAG, "Отобразили на дисплее.");
+        L.d(TAG, "EditXBin успешно создан!");
     }
 
     EditXBin(Object objStore[], int intNumber) {
         this(objStore);
         argX.setNumber(intNumber);
         makeArg();
-        Log.d(TAG, "Отобразили на дисплее.");
-        Log.d(TAG, "EditXBin успешно создан!");
+        L.d(TAG, "Отобразили на дисплее.");
+        L.d(TAG, "EditXBin успешно создан!");
     }
 
     EditXBin(Object objStore[], long longNumber) {
         this(objStore);
         argX.setNumber(longNumber);
         makeArg();
-        Log.d(TAG, "Отобразили на дисплее.");
-        Log.d(TAG, "EditXBin успешно создан!");
+        L.d(TAG, "Отобразили на дисплее.");
+        L.d(TAG, "EditXBin успешно создан!");
     }
 
     EditXBin(Object objStore[], double doubleNumber) {
         this(objStore);
         argX.setNumber(doubleNumber);
         makeArg();
-        Log.d(TAG, "Отобразили на дисплее.");
-        Log.d(TAG, "EditXBin успешно создан!");
+        L.d(TAG, "Отобразили на дисплее.");
+        L.d(TAG, "EditXBin успешно создан!");
     }
 
     void restart() {
@@ -144,23 +144,23 @@ class EditXBin {
 
     void setNumber(int intNumber) {
         argX.setNumber(intNumber);
-        Log.d(TAG, "В argXBin записали: " + intNumber);
+        L.d(TAG, "В argXBin записали: " + intNumber);
         makeArg();
-        Log.d(TAG, "Отобразили на дисплее: " + argX.getNumber());
+        L.d(TAG, "Отобразили на дисплее: " + argX.getNumber());
     }
 
     void setNumber(long longNumber) {
         argX.setNumber(longNumber);
-        Log.d(TAG, "В argXBin записали: " + longNumber);
+        L.d(TAG, "В argXBin записали: " + longNumber);
         makeArg();
-        Log.d(TAG, "Отобразили на дисплее: " + argX.getNumber());
+        L.d(TAG, "Отобразили на дисплее: " + argX.getNumber());
     }
 
     void setNumber(double doubleNumber) {
         argX.setNumber(doubleNumber);
-        Log.d(TAG, "В argXBin записали: " + doubleNumber);
+        L.d(TAG, "В argXBin записали: " + doubleNumber);
         makeArg();
-        Log.d(TAG, "Отобразили на дисплее: " + argX.getNumber());
+        L.d(TAG, "Отобразили на дисплее: " + argX.getNumber());
     }
 
     void x_to_y() throws MyExceptions {
@@ -174,7 +174,7 @@ class EditXBin {
         argX = new ArgXBin(calculatorSelector(argX.getDouble(mainDisplay.byteLengthBin), stackCalculator.PLUS));
         newInput = true;
         calcpress = false;
-//        Log.d(TAG, "Флаг Result: " + stackCalculator.isResult());
+//        L.d(TAG, "Флаг Result: " + stackCalculator.isResult());
         makeArg();
     }
 
@@ -182,7 +182,7 @@ class EditXBin {
         argX = new ArgXBin(calculatorSelector(argX.getDouble(mainDisplay.byteLengthBin), stackCalculator.MINUS));
         newInput = true;
         calcpress = false;
-//        Log.d(TAG, "Флаг Result: " + stackCalculator.isResult());
+//        L.d(TAG, "Флаг Result: " + stackCalculator.isResult());
         makeArg();
     }
 
@@ -190,7 +190,7 @@ class EditXBin {
         argX = new ArgXBin(calculatorSelector(argX.getDouble(mainDisplay.byteLengthBin), stackCalculator.MULTIPLY));
         newInput = true;
         calcpress = false;
-//        Log.d(TAG, "Флаг Result: " + stackCalculator.isResult());
+//        L.d(TAG, "Флаг Result: " + stackCalculator.isResult());
         makeArg();
     }
 
@@ -198,7 +198,7 @@ class EditXBin {
         argX = new ArgXBin(calculatorSelector(argX.getDouble(mainDisplay.byteLengthBin), stackCalculator.DIVIDE));
         newInput = true;
         calcpress = false;
-//        Log.d(TAG, "Флаг Result: " + stackCalculator.isResult());
+//        L.d(TAG, "Флаг Result: " + stackCalculator.isResult());
         makeArg();
     }
 
@@ -206,7 +206,7 @@ class EditXBin {
         argX = new ArgXBin(calcAll(argX.getDouble(mainDisplay.byteLengthBin)));
         newInput = true;
         calcpress = true;
-//        Log.d(TAG, "Флаг Result: " + stackCalculator.isResult());
+//        L.d(TAG, "Флаг Result: " + stackCalculator.isResult());
         makeArg();
 
     }
@@ -216,11 +216,11 @@ class EditXBin {
             return;
         }
         if (argX.getNumber().length() > 0) {
-            Log.d(TAG, "Длина числа больше нуля.");
-            Log.d(TAG, "Удаляем один символ.");
+            L.d(TAG, "Длина числа больше нуля.");
+            L.d(TAG, "Удаляем один символ.");
             argX.setFromStringBuilder(argX.getNumber().deleteCharAt(argX.getNumber().length() - 1));
         } else {
-            Log.d(TAG, "Длина целой части числа равна нулю, ничего удалять не будем.");
+            L.d(TAG, "Длина целой части числа равна нулю, ничего удалять не будем.");
             newInput = true;
         }
         makeArg();
@@ -249,12 +249,12 @@ class EditXBin {
     private double calcAll(double number) throws MyExceptions {
         while (!stackCalculator.isStackForNumberStackEmpty() && !stackCalculator.isOperationStackEmpty()) { // Пока стеки стеков не опустеют, продолжаем вычислять
             number = calculatorSelector(number, stackCalculator.NOP);
-            Log.d(TAG, "Посчитано: " + number);
+            L.d(TAG, "Посчитано: " + number);
             stackCalculator.oldStacksRestore();
         }
         if (stackCalculator.isStackForNumberStackEmpty() && stackCalculator.isStackForOperationStackEmpty()) {
             status.setBracket(false);
-            Log.d(TAG, "Скобка закрыта");
+            L.d(TAG, "Скобка закрыта");
         }
         number = calculatorSelector(number, stackCalculator.NOP);
         return number;
@@ -267,31 +267,31 @@ class EditXBin {
     private double stackCalculatorSelector(double currentNumber, int currentOperation) throws MyExceptions {
         mainDisplay.offSciMode();
         if (stackCalculator.isNumberStackEmpty()) {//Если стек чисел пуст
-            Log.d(TAG, "Стек чисел пуст");
+            L.d(TAG, "Стек чисел пуст");
             if (currentOperation != stackCalculator.NOP) {//Если была любая операция кроме NOP, т. е. кроме "=" или закрытия скобки, то заносим все в стек
-                Log.d(TAG, "Еще не было операций, заношу значения в новый стек чисел и в новый стек операций");
+                L.d(TAG, "Еще не было операций, заношу значения в новый стек чисел и в новый стек операций");
                 calc = false;
                 currentNumber = stackCalculator.putInStack(currentNumber, currentOperation);
             }
             if (currentOperation == stackCalculator.NOP) {//Если была операция NOP, т. е. "=" или закрытие скобки
-                Log.d(TAG, "Стек чисел пуст и было нажато = , здесь должны быть вычисления с использованием постоянных");
+                L.d(TAG, "Стек чисел пуст и было нажато = , здесь должны быть вычисления с использованием постоянных");
                 currentNumber = stackCalculator.calcAutoConstant(currentNumber);
                 calc = true;
             }
             return currentNumber;
         }
         // Здесь уже ясно, что в стеке чисел что-то есть
-        Log.d(TAG, "В стеках чисел и операций уже что-то есть");
-//        Log.d(TAG, "argX.isVirgin(): " + argX.isVirgin());
-//        Log.d(TAG, "stackCalculator.isResult(): " + stackCalculator.isResult());
+        L.d(TAG, "В стеках чисел и операций уже что-то есть");
+//        L.d(TAG, "argX.isVirgin(): " + argX.isVirgin());
+//        L.d(TAG, "stackCalculator.isResult(): " + stackCalculator.isResult());
 
 //        if (!stackCalculator.isResult()) { //В стеке чисел и операций уже что-то есть, новое число не вводили, а нажали на операцию, значит в стеке чисел - автоконстанта
-//            Log.d(TAG, "Но, новое число не вводили, а нажали на операцию, значит в стеке чисел - автоконстанта");
+//            L.d(TAG, "Но, новое число не вводили, а нажали на операцию, значит в стеке чисел - автоконстанта");
 //            currentNumber = stackCalculator.setAutoConstant(currentNumber);
 //            calc = false;
 //            return currentNumber;
 //        }
-        Log.d(TAG, "Считаем!");
+        L.d(TAG, "Считаем!");
         currentNumber = stackCalculator.calc(currentNumber, currentOperation); //Считаем
         calc = true;
         if (Double.isInfinite(currentNumber)) {
@@ -340,14 +340,14 @@ class EditXBin {
 
     void memoryPlus() throws MyExceptions {
         double tmp1 = argX.getDouble(mainDisplay.byteLengthBin);
-        Log.d(TAG, "Набрано: " + tmp1 + " M+");
+        L.d(TAG, "Набрано: " + tmp1 + " M+");
         if (!stackCalculator.isOperationStackEmpty()) {
             tmp1 = calcAll(tmp1);
         }
-        Log.d(TAG, "Посчитано: " + tmp1);
+        L.d(TAG, "Посчитано: " + tmp1);
         argX.setNumber(tmp1);
         makeArg();
-        Log.d(TAG, "Прибавляю к памяти: " + tmp1);
+        L.d(TAG, "Прибавляю к памяти: " + tmp1);
         double tmp2 = getMemory();
         double tmp3 = tmp1 + tmp2;
         setMemory(tmp3);
@@ -358,7 +358,7 @@ class EditXBin {
 
     private void setMemory(double mem) {
         memoryStore.setMemory(mem);
-        Log.d(TAG, "Теперь в памяти: " + mem);
+        L.d(TAG, "Теперь в памяти: " + mem);
     }
 
     private double getMemory() {
@@ -371,12 +371,12 @@ class EditXBin {
         editX = (EditX) objStore[MainActivity.EDIT_X];
         if (editX == null) {
             editX = new EditX(objStore);
-            Log.d(TAG, "Создали объект editX, который будет отвечать за ввод всего");
+            L.d(TAG, "Создали объект editX, который будет отвечать за ввод всего");
             objStore[MainActivity.EDIT_X] = editX;
         }
-        Log.d(TAG, "Переключаемся в DEC режим.");
+        L.d(TAG, "Переключаемся в DEC режим.");
         double doubleNumber = argX.getDouble(mainDisplay.byteLengthBin);
-        Log.d(TAG, "В DEC режим передаем число: " + doubleNumber);
+        L.d(TAG, "В DEC режим передаем число: " + doubleNumber);
         editX.setNumber(doubleNumber);
     }
 
@@ -384,12 +384,12 @@ class EditXBin {
         editXBin = (EditXBin) objStore[MainActivity.EDIT_X_BIN];
         if (editXBin == null) {
             editXBin = new EditXBin(objStore);
-            Log.d(TAG, "Создали объект editXBin, который будет отвечать за ввод двоичных чисел");
+            L.d(TAG, "Создали объект editXBin, который будет отвечать за ввод двоичных чисел");
             objStore[MainActivity.EDIT_X_BIN] = editXBin;
         }
-        Log.d(TAG, "Переключаемся в BIN режим.");
+        L.d(TAG, "Переключаемся в BIN режим.");
         double doubleNumber = argX.getDouble(mainDisplay.byteLengthBin);
-        Log.d(TAG, "В BIN режим передаем число: " + doubleNumber);
+        L.d(TAG, "В BIN режим передаем число: " + doubleNumber);
         editXBin.setNumber(doubleNumber);
     }
 
@@ -397,12 +397,12 @@ class EditXBin {
         editXOct = (EditXOct) objStore[MainActivity.EDIT_X_OCT];
         if (editXOct == null) {
             editXOct = new EditXOct(objStore);
-            Log.d(TAG, "Создали объект editXOct, который будет отвечать за ввод восьмиричных чисел");
+            L.d(TAG, "Создали объект editXOct, который будет отвечать за ввод восьмиричных чисел");
             objStore[MainActivity.EDIT_X_OCT] = editXOct;
         }
-        Log.d(TAG, "Переключаемся в OCT режим.");
+        L.d(TAG, "Переключаемся в OCT режим.");
         double doubleNumber = argX.getDouble(mainDisplay.byteLengthBin);
-        Log.d(TAG, "В OCT режим передаем число: " + doubleNumber);
+        L.d(TAG, "В OCT режим передаем число: " + doubleNumber);
         editXOct.setNumber(doubleNumber);
     }
 
@@ -410,12 +410,12 @@ class EditXBin {
         editXHex = (EditXHex) objStore[MainActivity.EDIT_X_HEX];
         if (editXHex == null) {
             editXHex = new EditXHex(objStore);
-            Log.d(TAG, "Создали объект editXHex, который будет отвечать за ввод шестнадцатиричных чисел");
+            L.d(TAG, "Создали объект editXHex, который будет отвечать за ввод шестнадцатиричных чисел");
             objStore[MainActivity.EDIT_X_HEX] = editXHex;
         }
-        Log.d(TAG, "Переключаемся в HEX режим.");
+        L.d(TAG, "Переключаемся в HEX режим.");
         double doubleNumber = argX.getDouble(mainDisplay.byteLengthBin);
-        Log.d(TAG, "В HEX режим передаем число: " + doubleNumber);
+        L.d(TAG, "В HEX режим передаем число: " + doubleNumber);
         editXHex.setNumber(doubleNumber);
     }
 
@@ -424,20 +424,20 @@ class EditXBin {
         StringBuilder sb = new StringBuilder("");
 
         if (argX.isSign()) { // Если есть минус, то меняем отображаемое число
-            Log.d(TAG, "Есть минус, меняем отображаемое число.");
+            L.d(TAG, "Есть минус, меняем отображаемое число.");
             sb.append(Long.toBinaryString(argX.getLong(mainDisplay.byteLengthBin)));
         } else {
             sb.append(argX.getNumber());// Иначе просто добавляем число
-            Log.d(TAG, "Добавили число.");
-            Log.d(TAG, sb.toString());
+            L.d(TAG, "Добавили число.");
+            L.d(TAG, sb.toString());
         }
-        Log.d(TAG, "В буфер обмена отправляю: " + sb);
+        L.d(TAG, "В буфер обмена отправляю: " + sb);
         return sb;
     }
 
 
     void pasteFromClipboard(String str) {
-        Log.d(TAG, "Из буфера обмена получено: " + str);
+        L.d(TAG, "Из буфера обмена получено: " + str);
         StringBuilder sb = (createDouble(str));
         if (sb.length() == 0) {
             customToast.setToastText("Попытка вставки из буфера обмена закончилась неудачей.");
@@ -450,14 +450,14 @@ class EditXBin {
     }
 
     private StringBuilder createDouble(final String str) {
-        Log.d(TAG, "Получена строка: " + str);
+        L.d(TAG, "Получена строка: " + str);
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
             int charCode = (int) ch;
-            Log.d(TAG, "Символ [" + i + "]: " + ch + " его код: " + charCode);
+            L.d(TAG, "Символ [" + i + "]: " + ch + " его код: " + charCode);
         }
         if (str.isEmpty() || str == null) {//Если строка пустая, то выходим нулем
-            Log.d(TAG, "Строка пустая, выходим с нулем.");
+            L.d(TAG, "Строка пустая, выходим с нулем.");
             return new StringBuilder("");
         }
 //        final char[] chars = str.toCharArray();
@@ -466,7 +466,7 @@ class EditXBin {
         int curIndex;
 
         // Удаляем GroupingSeparator
-        Log.d(TAG, "Удаляем GroupingSeparator.");
+        L.d(TAG, "Удаляем GroupingSeparator.");
         int groupingSeparatorCounter = 0;
         curIndex = sb.indexOf("" + '\u00A0');
         while (curIndex != -1) {
@@ -504,7 +504,7 @@ class EditXBin {
         }
 
         //Приводим Exponent Separator к общему виду
-        Log.d(TAG, "Приводим Exponent Separator к общему виду.");
+        L.d(TAG, "Приводим Exponent Separator к общему виду.");
 
         for (int i = 0; i < sb.length(); i++) {
             char ch = str.charAt(i);
@@ -564,7 +564,7 @@ class EditXBin {
         }
 
         if (exponentSeparatorCounter > 1) {
-            Log.d(TAG, "Ошибка. ExponentSeparator был найден " + exponentSeparatorCounter + " раз.");
+            L.d(TAG, "Ошибка. ExponentSeparator был найден " + exponentSeparatorCounter + " раз.");
             return new StringBuilder("");
         }
 
@@ -572,13 +572,13 @@ class EditXBin {
 
         curIndex = sb.indexOf("E+");
         while (curIndex != -1) {
-            Log.d(TAG, "Удаляем + перед экспоненциальной частью.");
+            L.d(TAG, "Удаляем + перед экспоненциальной частью.");
             sb.replace(curIndex, curIndex + 2, "E");
             curIndex = sb.indexOf("E+");
         }
 
         // Приводим MinusSign к общему виду
-        Log.d(TAG, "Приводим MinusSign к общему виду.");
+        L.d(TAG, "Приводим MinusSign к общему виду.");
         curIndex = sb.indexOf("" + '\u2212');
         while (curIndex != -1) {
             sb.replace(curIndex, curIndex + 1, "-");
@@ -586,7 +586,7 @@ class EditXBin {
         }
 
         // Приводим ZeroDigit к общему виду
-        Log.d(TAG, "Приводим ZeroDigit к общему виду.");
+        L.d(TAG, "Приводим ZeroDigit к общему виду.");
         curIndex = sb.indexOf("" + '\u0660');
         while (curIndex != -1) {
             sb.replace(curIndex, curIndex + 1, "0");
@@ -625,7 +625,7 @@ class EditXBin {
 
         curIndex = sb.indexOf("\n");
         while (curIndex != -1) {
-            Log.d(TAG, "Удаляем перевод строки.");
+            L.d(TAG, "Удаляем перевод строки.");
             sb.deleteCharAt(curIndex);
             curIndex = sb.indexOf("\n");
         }
@@ -647,34 +647,34 @@ class EditXBin {
                     break;
             }
         }
-        Log.d(TAG, "Число arabicDecimalSeparator = " + arabicDecimalSeparatorCounter);
-        Log.d(TAG, "Число точек = " + dotCounter);
-        Log.d(TAG, "Число запятых = " + commaCounter);
+        L.d(TAG, "Число arabicDecimalSeparator = " + arabicDecimalSeparatorCounter);
+        L.d(TAG, "Число точек = " + dotCounter);
+        L.d(TAG, "Число запятых = " + commaCounter);
 
         if (groupingSeparatorCounter > 0) {//groupingSeparator уже удален, будем менять DecimalSeparator на точку
-            Log.d(TAG, "groupingSeparator уже удален, будем менять DecimalSeparator на точку.");
+            L.d(TAG, "groupingSeparator уже удален, будем менять DecimalSeparator на точку.");
             if ((arabicDecimalSeparatorCounter + dotCounter + commaCounter) > 1) {
-                Log.d(TAG, "Ошибка. groupingSeparator уже был удален, DecimalSeparator может быть только один.");
+                L.d(TAG, "Ошибка. groupingSeparator уже был удален, DecimalSeparator может быть только один.");
                 return new StringBuilder("");
             }
             if (arabicDecimalSeparatorCounter != 0) {
-                Log.d(TAG, "Меняем ArabicDecimalSeparator на точку.");
+                L.d(TAG, "Меняем ArabicDecimalSeparator на точку.");
                 int aDSIndex = sb.indexOf("" + '\u066B');
                 sb.replace(aDSIndex, aDSIndex + 1, ".");
             } else if (commaCounter != 0) {
-                Log.d(TAG, "Меняем запятую на точку.");
+                L.d(TAG, "Меняем запятую на точку.");
                 int commaIndex = sb.indexOf(",");
                 sb.replace(commaIndex, commaIndex + 1, ".");
             } else {
-                Log.d(TAG, "DecimalSeparator это точка, оставляем как есть.");
+                L.d(TAG, "DecimalSeparator это точка, оставляем как есть.");
             }
         } else {
             if (arabicDecimalSeparatorCounter > 1) {
-                Log.d(TAG, "Ошибка. ArabicDecimalSeparator был найден " + arabicDecimalSeparatorCounter + " раз.");
+                L.d(TAG, "Ошибка. ArabicDecimalSeparator был найден " + arabicDecimalSeparatorCounter + " раз.");
                 return new StringBuilder("");
             }
             if (arabicDecimalSeparatorCounter == 1) {
-                Log.d(TAG, "Был найден ArabicDecimalSeparator, значит он и есть DecimalSeparator удаляем все точки и запятые.");
+                L.d(TAG, "Был найден ArabicDecimalSeparator, значит он и есть DecimalSeparator удаляем все точки и запятые.");
                 curIndex = sb.indexOf(".");
                 while (curIndex != -1) {
                     sb.deleteCharAt(curIndex);
@@ -689,40 +689,40 @@ class EditXBin {
                 sb.replace(aDSIndex, aDSIndex + 1, ".");
             }
             //Здесь уже ясно, что число ArabicDecimalSeparator = 0
-            Log.d(TAG, "Здесь уже ясно, что число ArabicDecimalSeparator = 0.");
+            L.d(TAG, "Здесь уже ясно, что число ArabicDecimalSeparator = 0.");
             if (dotCounter == 0) {
                 if (commaCounter == 0) {//у нас целое число без GroupingSeparator и без DecimalSeparator
-                    Log.d(TAG, "У нас целое число без GroupingSeparator и без DecimalSeparator.");
+                    L.d(TAG, "У нас целое число без GroupingSeparator и без DecimalSeparator.");
                 }
                 if (commaCounter == 1) {//Запятая либо DecimalSeparator, либо GroupingSeparator
-                    Log.d(TAG, "Запятая либо DecimalSeparator, либо GroupingSeparator.");
+                    L.d(TAG, "Запятая либо DecimalSeparator, либо GroupingSeparator.");
                     int expIndex = sb.indexOf("E");
                     int commaIndex = sb.indexOf(",");
                     if (expIndex == -1) {
                         expIndex = sb.length();
                     }
                     if ((expIndex - commaIndex) != 4) { //запятая отстоит от знака экспоненты не на 4 символа - следовательно запятая это DecimalSeparator, меняем ее на точку
-                        Log.d(TAG, "Запятая отстоит от знака экспоненты не на 4 символа - следовательно запятая это DecimalSeparator, меняем ее на точку.");
+                        L.d(TAG, "Запятая отстоит от знака экспоненты не на 4 символа - следовательно запятая это DecimalSeparator, меняем ее на точку.");
                         sb.replace(commaIndex, commaIndex + 1, ".");
                     } else {//запятая отстоит от знака экспоненты на 4 символа - определяем кто есть кто из настроек локали
-                        Log.d(TAG, "Запятая отстоит от знака экспоненты на 4 символа - определяем кто есть кто из настроек локали.");
+                        L.d(TAG, "Запятая отстоит от знака экспоненты на 4 символа - определяем кто есть кто из настроек локали.");
                         DecimalFormatSymbols dfs;
                         Locale defLocale = Locale.getDefault();
                         dfs = new DecimalFormatSymbols(defLocale);
                         switch (dfs.getDecimalSeparator()) {
                             case '.':// В данной локали DecimalSeparator это точка, значит считаем, что запятая это GroupingSeparator. Удаляем ее.
-                                Log.d(TAG, "В данной локали DecimalSeparator это точка, значит считаем, что запятая это GroupingSeparator. Удаляем ее.");
+                                L.d(TAG, "В данной локали DecimalSeparator это точка, значит считаем, что запятая это GroupingSeparator. Удаляем ее.");
                                 sb.deleteCharAt(commaIndex);
                                 break;
                             case ',':// В данной локали DecimalSeparator это запятая. Меняем запятую на точку
-                                Log.d(TAG, "В данной локали DecimalSeparator это запятая. Меняем запятую на точку.");
+                                L.d(TAG, "В данной локали DecimalSeparator это запятая. Меняем запятую на точку.");
                                 sb.replace(commaIndex, commaIndex + 1, ".");
                                 break;
                         }
                     }
                 }
                 if (commaCounter > 1) {//Запятая это GroupingSeparator, просто удаляем все запятые
-                    Log.d(TAG, "Запятая это GroupingSeparator, просто удаляем все запятые.");
+                    L.d(TAG, "Запятая это GroupingSeparator, просто удаляем все запятые.");
                     curIndex = sb.indexOf(",");
                     while (curIndex != -1) {
                         sb.deleteCharAt(curIndex);
@@ -732,46 +732,46 @@ class EditXBin {
             }
             if (dotCounter == 1) {
                 if (commaCounter == 0) {//Точка либо DecimalSeparator, либо GroupingSeparator
-                    Log.d(TAG, "Точка либо DecimalSeparator, либо GroupingSeparator.");
+                    L.d(TAG, "Точка либо DecimalSeparator, либо GroupingSeparator.");
                     int expIndex = sb.indexOf("E");
                     int dotIndex = sb.indexOf(".");
                     if (expIndex == -1) {
                         expIndex = sb.length();
                     }
                     if ((expIndex - dotIndex) == 4) {//точка отстоит от знака экспоненты на 4 символа - определяем кто есть кто из настроек локали
-                        Log.d(TAG, "Точка отстоит от знака экспоненты на 4 символа - определяем кто есть кто из настроек локали.");
+                        L.d(TAG, "Точка отстоит от знака экспоненты на 4 символа - определяем кто есть кто из настроек локали.");
                         DecimalFormatSymbols dfs;
                         Locale defLocale = Locale.getDefault();
                         dfs = new DecimalFormatSymbols(defLocale);
                         switch (dfs.getDecimalSeparator()) {
                             case '.':// В данной локали DecimalSeparator это точка
-                                Log.d(TAG, "В данной локали DecimalSeparator это точка.");
+                                L.d(TAG, "В данной локали DecimalSeparator это точка.");
                                 break;
                             case ',':// В данной локали DecimalSeparator это запятая. Удаляем точку
-                                Log.d(TAG, "В данной локали DecimalSeparator это запятая. Удаляем точку.");
+                                L.d(TAG, "В данной локали DecimalSeparator это запятая. Удаляем точку.");
                                 sb.deleteCharAt(dotIndex);
                                 break;
                         }
                     } else { //точка отстоит от знака экспоненты не на 4 символа - следовательно точка это DecimalSeparator
-                        Log.d(TAG, "Точка отстоит от знака экспоненты не на 4 символа - следовательно точка это DecimalSeparator.");
+                        L.d(TAG, "Точка отстоит от знака экспоненты не на 4 символа - следовательно точка это DecimalSeparator.");
                     }
                 }
                 if (commaCounter == 1) {//В этом случае, кто правее тот и DecimalSeparator
-                    Log.d(TAG, "Число точек и число запятых равно 1. В этом случае, кто правее тот и DecimalSeparator.");
+                    L.d(TAG, "Число точек и число запятых равно 1. В этом случае, кто правее тот и DecimalSeparator.");
                     int dotIndex = sb.indexOf(".");
                     int commaIndex = sb.indexOf(",");
                     if (dotIndex > commaIndex) { // точка правее, удаляем запятую
-                        Log.d(TAG, "Точка правее, удаляем запятую.");
+                        L.d(TAG, "Точка правее, удаляем запятую.");
                         sb.deleteCharAt(commaIndex);
                     } else { // иначе запятая правее, удаляем точку и меняем запятую на точку
-                        Log.d(TAG, "Запятая правее, удаляем точку и меняем запятую на точку.");
+                        L.d(TAG, "Запятая правее, удаляем точку и меняем запятую на точку.");
                         sb.deleteCharAt(dotIndex);
                         curIndex = sb.indexOf(",");
                         sb.replace(curIndex, curIndex + 1, ".");
                     }
                 }
                 if (commaCounter > 1) {//у нас DecimalSeparator это точка, удаляем запятые
-                    Log.d(TAG, "У нас DecimalSeparator это точка, удаляем запятые.");
+                    L.d(TAG, "У нас DecimalSeparator это точка, удаляем запятые.");
                     curIndex = sb.indexOf(",");
                     while (curIndex != -1) {
                         sb.deleteCharAt(curIndex);
@@ -781,7 +781,7 @@ class EditXBin {
             }
             if (dotCounter > 1) {
                 if (commaCounter == 0) {//Точка GroupingSeparator, просто удаляем точки
-                    Log.d(TAG, "Точка это GroupingSeparator, просто удаляем точки.");
+                    L.d(TAG, "Точка это GroupingSeparator, просто удаляем точки.");
                     curIndex = sb.indexOf(".");
                     while (curIndex != -1) {
                         sb.deleteCharAt(curIndex);
@@ -789,7 +789,7 @@ class EditXBin {
                     }
                 }
                 if (commaCounter == 1) {//у нас DecimalSeparator это запятая, удаляем точки и меняем запятую на точку
-                    Log.d(TAG, "У нас DecimalSeparator это запятая, удаляем точки и меняем запятую на точку.");
+                    L.d(TAG, "У нас DecimalSeparator это запятая, удаляем точки и меняем запятую на точку.");
                     curIndex = sb.indexOf(".");
                     while (curIndex != -1) {
                         sb.deleteCharAt(curIndex);
@@ -800,7 +800,7 @@ class EditXBin {
 
                 }
                 if (commaCounter > 1) {//ошибка
-                    Log.d(TAG, "Ошибка. Число точек и число запятых не может одновременно быть больше 1.");
+                    L.d(TAG, "Ошибка. Число точек и число запятых не может одновременно быть больше 1.");
                     return new StringBuilder("");
                 }
 
@@ -809,11 +809,11 @@ class EditXBin {
         if (!isCreatable("" + sb)) {
             return new StringBuilder("");
         }
-        Log.d(TAG, "Возвращаем преобразованную строку: " + sb);
+        L.d(TAG, "Возвращаем преобразованную строку: " + sb);
         for (int i = 0; i < sb.length(); i++) {
             char ch = sb.charAt(i);
             int charCode = (int) ch;
-            Log.d(TAG, "Символ [" + i + "]: " + ch + " его код: " + charCode);
+            L.d(TAG, "Символ [" + i + "]: " + ch + " его код: " + charCode);
         }
         return sb;
     }
@@ -832,9 +832,9 @@ class EditXBin {
      * @since 3.5 the code supports the "+" suffix on numbers except for integers in Java 1.6
      */
     private boolean isCreatable(final String str) {
-        Log.d(TAG, "isCreatable() запущен, на входе строка: " + str);
+        L.d(TAG, "isCreatable() запущен, на входе строка: " + str);
         if (StringUtils.isEmpty(str)) { //Если строка пустая, то выходим с отрицательным ответом
-            Log.d(TAG, "Строка пустая, выходим с отрицательным ответом.");
+            L.d(TAG, "Строка пустая, выходим с отрицательным ответом.");
             return false;
         }
         final char[] chars = str.toCharArray();
@@ -879,75 +879,75 @@ class EditXBin {
         // make a valid number (e.g. chars[0..5] = "1234E")                                 для создания правильного числа
         while (i < sz || i < sz + 1 && allowSigns && !foundDigit) {
             if (chars[i] >= '0' && chars[i] <= '9') {//Если нашли цифру
-                Log.d(TAG, "Нашли цифру: " + chars[i]);
+                L.d(TAG, "Нашли цифру: " + chars[i]);
                 foundDigit = true;
                 allowSigns = false; //Запрещаем символы знака '+' или '-'
 
             } else if (chars[i] == '.') {//Если нашли точку
-                Log.d(TAG, "Нашли точку: " + chars[i]);
+                L.d(TAG, "Нашли точку: " + chars[i]);
                 if (hasDecPoint || hasExp) {
                     // two decimal points or dec in exponent
-                    Log.d(TAG, "Две точки или точка в экспоненциальной части, выходим с отрицательным ответом.");
+                    L.d(TAG, "Две точки или точка в экспоненциальной части, выходим с отрицательным ответом.");
                     return false;//Если две точки или точка в экспоненциальной части, то выходим с отрицательным ответом
                 }
                 hasDecPoint = true;
             } else if (chars[i] == 'e' || chars[i] == 'E') {//Если нашли 'e' или 'E'
-                Log.d(TAG, "Нашли 'e' или 'E': " + chars[i]);
+                L.d(TAG, "Нашли 'e' или 'E': " + chars[i]);
                 // we've already taken care of hex.
                 if (hasExp) {
                     // two E's
-                    Log.d(TAG, "Два символа 'E', выходим с отрицательным ответом.");
+                    L.d(TAG, "Два символа 'E', выходим с отрицательным ответом.");
                     return false;//Если два символа 'E', то выходим с отрицательным ответом
                 }
                 if (!foundDigit) {
-                    Log.d(TAG, "Нашли 'E', но цифр еще небыло, выходим с отрицательным ответом.");
+                    L.d(TAG, "Нашли 'E', но цифр еще небыло, выходим с отрицательным ответом.");
                     return false;//Если нашли 'E', но цифр еще небыло, то выходим с отрицательным ответом
                 }
                 hasExp = true;
                 allowSigns = true;//так как нашли 'e' или 'E', то снова разрешаем сиволы знака '+' или '-'
             } else if (chars[i] == '+' || chars[i] == '-') {//Если нашли символы знака '+' или '-'
-                Log.d(TAG, "Нашли символы знака '+' или '-': " + chars[i]);
+                L.d(TAG, "Нашли символы знака '+' или '-': " + chars[i]);
                 if (!allowSigns) {
-                    Log.d(TAG, "Символы знака запрещены, выходим с отрицательным ответом.");
+                    L.d(TAG, "Символы знака запрещены, выходим с отрицательным ответом.");
                     return false;//Если символы знака запрещены, то выходим с отрицательным ответом
                 }
                 allowSigns = false;//Запрещаем символы знака '+' или '-'
                 foundDigit = false; // we need a digit after the E Нам нужна цифра после E
             } else {
-                Log.d(TAG, "Ничего подходящего не нашли, выходим с отрицательным ответом.");
+                L.d(TAG, "Ничего подходящего не нашли, выходим с отрицательным ответом.");
                 return false;// Если ничего подходящего не нашли, то выходим с отрицательным ответом
             }
             i++;
         }
         if (i < chars.length) {//Если остался еще символ
             if (chars[i] >= '0' && chars[i] <= '9') {//остался символ цифры
-                Log.d(TAG, "Нашли цифру: " + chars[i]);
+                L.d(TAG, "Нашли цифру: " + chars[i]);
                 if (SystemUtils.IS_JAVA_1_6 && hasLeadingPlusSign && !hasDecPoint) {//Если у нас JAVA 1.6 и если первый символ '+' и если нет десятичной точки,
-                    Log.d(TAG, "У нас JAVA 1.6 и первый символ '+' и нет десятичной точки, выходим с отрицательным ответом.");
+                    L.d(TAG, "У нас JAVA 1.6 и первый символ '+' и нет десятичной точки, выходим с отрицательным ответом.");
                     return false;// то выходим с отрицательным ответом
                 }
                 // no type qualifier, OK
-                Log.d(TAG, "Все в порядке - число пригодно, число без указаня типа.");
+                L.d(TAG, "Все в порядке - число пригодно, число без указаня типа.");
                 return true;//Все в порядке - число пригодно, число без указаня типа
             }
             if (chars[i] == 'e' || chars[i] == 'E') {//Если нашли 'e' или 'E'
-                Log.d(TAG, "Нашли 'e' или 'E': " + chars[i]);
+                L.d(TAG, "Нашли 'e' или 'E': " + chars[i]);
                 // can't have an E at the last byte
-                Log.d(TAG, "Не может быть E в последнем символе, выходим с отрицательным ответом.");
+                L.d(TAG, "Не может быть E в последнем символе, выходим с отрицательным ответом.");
                 return false;// то выходим с отрицательным ответом
             }
             if (chars[i] == '.') {//Если нашли точку
-                Log.d(TAG, "Нашли точку: " + chars[i]);
+                L.d(TAG, "Нашли точку: " + chars[i]);
                 if (hasDecPoint || hasExp) {//Если две точки или точка в экспоненциальной части, то выходим с отрицательным ответом
-                    Log.d(TAG, "Две точки или точка в экспоненциальной части, выходим с отрицательным ответом.");
+                    L.d(TAG, "Две точки или точка в экспоненциальной части, выходим с отрицательным ответом.");
                     // two decimal points or dec in exponent
                     return false;
                 }
                 // single trailing decimal point after non-exponent is ok
                 if (foundDigit) {
-                    Log.d(TAG, "Нашли точку в конце числа без экспоненциальной части, это нормально.");
+                    L.d(TAG, "Нашли точку в конце числа без экспоненциальной части, это нормально.");
                 } else {
-                    Log.d(TAG, "Нашли точку, но не было цифр, это ненормально, выходим с отрицательным ответом.");
+                    L.d(TAG, "Нашли точку, но не было цифр, это ненормально, выходим с отрицательным ответом.");
                 }
                 return foundDigit;//Если нашли точку в конце число без экспоненциальной части, то это нормально, а если нашли точку, но небыло цифр, то это ненормально
             }
@@ -956,36 +956,36 @@ class EditXBin {
                     || chars[i] == 'D'//
                     || chars[i] == 'f'
                     || chars[i] == 'F')) {
-                Log.d(TAG, "Нашли символ типа с плавающей точкой не после символа 'E': " + chars[i]);
+                L.d(TAG, "Нашли символ типа с плавающей точкой не после символа 'E': " + chars[i]);
                 if (foundDigit) {
-                    Log.d(TAG, "До этого были найдены цифры, возвращаем true.");
+                    L.d(TAG, "До этого были найдены цифры, возвращаем true.");
                 } else {
-                    Log.d(TAG, "До этого не были найдены цифры, возвращаем false.");
+                    L.d(TAG, "До этого не были найдены цифры, возвращаем false.");
                 }
                 return foundDigit;// Возвращаем true если были цифры и возвращем false если цифр небыло
             }
             if (chars[i] == 'l'//Если на конце 'l' или 'L'
                     || chars[i] == 'L') {
-                Log.d(TAG, "Нашли символ типа long: " + chars[i]);
+                L.d(TAG, "Нашли символ типа long: " + chars[i]);
                 // not allowing L with an exponent or decimal point
                 if (foundDigit && !hasExp && !hasDecPoint) {
-                    Log.d(TAG, "До этого были найдены цифры, нет экспоненциальной части и нет десятичной точки - возвращаем true.");
+                    L.d(TAG, "До этого были найдены цифры, нет экспоненциальной части и нет десятичной точки - возвращаем true.");
                 } else {
-                    Log.d(TAG, "До этого не были найдены цифры, либо была найдена экспоненциальная часть, либо есть десятичная точка - возвращаем false.");
+                    L.d(TAG, "До этого не были найдены цифры, либо была найдена экспоненциальная часть, либо есть десятичная точка - возвращаем false.");
                 }
                 return foundDigit && !hasExp && !hasDecPoint;// Возвращаем true если были цифры, нет экспоненциальной части и нет десятичной точки
             }
             // last character is illegal
-            Log.d(TAG, "Последний символ неправильный, возвращаем false.");
+            L.d(TAG, "Последний символ неправильный, возвращаем false.");
             return false;//последний символ нераспознан
         }
         // allowSigns is true iff the val ends in 'E'                               allowSigns = true только после E
         // found digit it to make sure weird stuff like '.' and '1E-' doesn't pass  Возвращаем true только если allowSigns = false и если были цифры,
         //                                                                          чтобы убедиться, что такие странные вещи, как '.' И '1E-' не проходит
         if (!allowSigns && foundDigit) {
-            Log.d(TAG, "Символ знака запрещен и были цифры - возвращаем true.");
+            L.d(TAG, "Символ знака запрещен и были цифры - возвращаем true.");
         } else {
-            Log.d(TAG, "Проверка не пройдена - возвращаем false.");
+            L.d(TAG, "Проверка не пройдена - возвращаем false.");
         }
         return !allowSigns && foundDigit;
     }

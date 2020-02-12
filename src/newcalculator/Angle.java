@@ -31,8 +31,8 @@ class Angle {
         angleUnits[GRAD] = "g";
         this.statusDisplay = statusDisplay;
         this.preferences = preferences;
-        Log.d(TAG, "statusDisplay: " + statusDisplay);
-        Log.d(TAG, "preferences: " + preferences);
+        L.d(TAG, "statusDisplay: " + statusDisplay);
+        L.d(TAG, "preferences: " + preferences);
         displayAngle(getAngle());
     }
 
@@ -42,13 +42,13 @@ class Angle {
      */
     int getAngle() {
         int angle = preferences.getAngleUnit();
-        Log.d(TAG, "Получаем значение едениц измерения угла из настроек: " + angleUnits[angle]);
+        L.d(TAG, "Получаем значение едениц измерения угла из настроек: " + angleUnits[angle]);
         return angle;
     }
 
     private void setAngle(int angle) {
         preferences.setAngleUnit(angle);
-        Log.d(TAG, "Занесли значение едениц измерения угла в настройки: " + angleUnits[angle]);
+        L.d(TAG, "Занесли значение едениц измерения угла в настройки: " + angleUnits[angle]);
         displayAngle(angle);
     }
 

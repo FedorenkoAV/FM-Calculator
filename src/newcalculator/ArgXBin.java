@@ -19,22 +19,22 @@ class ArgXBin {
         sign = false;
         editable = true;
         virginity = true;
-        Log.d(TAG, "Создали новый пустой ArgXBin");
+        L.d(TAG, "Создали новый пустой ArgXBin");
     }
 
 //    ArgXBin(long longNumber) {
 //        setNumber(longNumber);
-//        Log.d(TAG, "Создали новый НЕпустой ArgXBin");
+//        L.d(TAG, "Создали новый НЕпустой ArgXBin");
 //    }
 //
 //    ArgXBin(int intNumber) {
 //        setNumber(intNumber);
-//        Log.d(TAG, "Создали новый НЕпустой ArgXBin");
+//        L.d(TAG, "Создали новый НЕпустой ArgXBin");
 //    }
 
     ArgXBin(double doubleNumber) {
         setNumber(doubleNumber);
-        Log.d(TAG, "Создали новый НЕпустой ArgXBin");
+        L.d(TAG, "Создали новый НЕпустой ArgXBin");
     }
 
     public void setNumber(StringBuilder sbNumber) {
@@ -78,13 +78,13 @@ class ArgXBin {
     double getDouble(int byteLength) {
         double doubleNumber;
         doubleNumber = (double) getLong(byteLength);
-        Log.d(TAG, "После преобразования в double получили: " + doubleNumber);
+        L.d(TAG, "После преобразования в double получили: " + doubleNumber);
         return doubleNumber;
     }
 
     long getLong(int byteLength) {
         long longNumber = 0;
-        Log.d(TAG, "В ArgXBin лежит: " + number);
+        L.d(TAG, "В ArgXBin лежит: " + number);
         if (number.length() == 0) {
             return 0;
         }
@@ -94,10 +94,10 @@ class ArgXBin {
         boolean sign = isSign();
         curDigit = Character.digit(num.charAt(0), 2);
         if ((num.length() == byteLength * 8) && (curDigit > 0)) {//Если у нас число максимальной длинны и первый символ больше 0, то у нас отрицательное число
-            Log.d(TAG, "У нас число максимальной длинны и первый символ больше 0, т.е. " + num + " это отрицательное число.");
+            L.d(TAG, "У нас число максимальной длинны и первый символ больше 0, т.е. " + num + " это отрицательное число.");
             sign = !sign;//Инвертируем знак
-            Log.d(TAG, "Инвертируем знак sign = " + sign);
-            Log.d(TAG, "Инвертируем цифры числа побитово.");
+            L.d(TAG, "Инвертируем знак sign = " + sign);
+            L.d(TAG, "Инвертируем цифры числа побитово.");
             for (int i = 0; i < num.length(); i++) {
                 switch (num.charAt(i)) {
                     case '0':
@@ -108,28 +108,28 @@ class ArgXBin {
                         break;
                 }
             }
-            Log.d(TAG, "Положительное число в прямом коде: " + num);
+            L.d(TAG, "Положительное число в прямом коде: " + num);
             longNumber = Long.parseLong(num.toString(), 2);
-            Log.d(TAG, "Преобразовали к типу long: " + longNumber);
+            L.d(TAG, "Преобразовали к типу long: " + longNumber);
             longNumber++;
-            Log.d(TAG, "Увеличили на еденицу: " + longNumber);
+            L.d(TAG, "Увеличили на еденицу: " + longNumber);
         } else {
             try {
                 longNumber = Long.parseLong(num.toString(), 2);
 
             } catch (Exception e) {
-                Log.d(TAG, "При преобразовании String в long произошла ошибка: " + e);
+                L.d(TAG, "При преобразовании String в long произошла ошибка: " + e);
                 StackTraceElement[] stackTraceElements = e.getStackTrace();
 
                 for (int i = 0; i < stackTraceElements.length; i++) {
-                    Log.d(TAG, i + ": " + stackTraceElements[i].toString());
+                    L.d(TAG, i + ": " + stackTraceElements[i].toString());
                 }
             }
         }
         if (sign) {
             longNumber = -1 * longNumber;
         }
-        Log.d(TAG, "После преобразования в long получили: " + longNumber);
+        L.d(TAG, "После преобразования в long получили: " + longNumber);
         return longNumber;
     }
 
@@ -143,7 +143,7 @@ class ArgXBin {
 
     public void setSign(boolean sign) {
         this.sign = sign;
-        Log.d(TAG, "sign: " + this.sign);
+        L.d(TAG, "sign: " + this.sign);
     }
 
     boolean isEditable() {

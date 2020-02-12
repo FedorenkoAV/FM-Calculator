@@ -50,7 +50,7 @@ public class ParamsFile {
                 fin.close(); 
             } 
         } catch (IOException ex) { 
-            Log.d(TAG, "Ошибка чтения файла."); 
+            L.d(TAG, "Ошибка чтения файла."); 
         }        
     }
     

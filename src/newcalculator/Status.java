@@ -12,7 +12,7 @@ import javax.swing.AbstractButton;
  *
  * @author User
  */
-public class Status {
+class Status {
     private boolean shift = false;
     private boolean hyp = false;
     private boolean bracket = false;

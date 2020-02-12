@@ -72,26 +72,26 @@ public class EditX {
         protocol = (ProtocolJFrame) objStore[MainActivity.PROTOCOL];
         for (int i = 0; i < objStore.length; i++) {
 
-            Log.d(TAG, "В objStore[" + i + "]: " + objStore[i]);
+            L.d(TAG, "В objStore[" + i + "]: " + objStore[i]);
         }
         customToast = new CustomToast(activity, "Проба");
-        Log.d(TAG, "Создали CustomToast");
+        L.d(TAG, "Создали CustomToast");
         status.offError();
-        Log.d(TAG, "Выключили ошибку");
+        L.d(TAG, "Выключили ошибку");
 //        memory = new ArgX(memoryStore.getMemory());
-//        Log.d(TAG, "Создали memory");
+//        L.d(TAG, "Создали memory");
 //        setMemory(memory.getArgX());
-//        Log.d(TAG, "Включили отображение памяти, если нужно.");
+//        L.d(TAG, "Включили отображение памяти, если нужно.");
         newInput = true;
         calcpress = false;
         fixModeNumberWait = false;
         newArg();
-        Log.d(TAG, "Создали новый ArgX.");
+        L.d(TAG, "Создали новый ArgX.");
         argA = new ArgX();
         argB = new ArgX();
         makeArg();
-        Log.d(TAG, "Отобразили на дисплее.");
-        Log.d(TAG, "EditX успешно создан!");
+        L.d(TAG, "Отобразили на дисплее.");
+        L.d(TAG, "EditX успешно создан!");
     }
 
     void restart() {
@@ -116,17 +116,17 @@ public class EditX {
     void add(char pressedKey) {
         mainDisplay.offSciMode();
         if (fixModeNumberWait) { //Если нажали на кнопку FIX
-            Log.d(TAG, "Устанавливаем режим округления");
+            L.d(TAG, "Устанавливаем режим округления");
             fixModeNumberWait = false; // выключаем режим ожидания
-            Log.d(TAG, "argX.isVirgin(): " + argX.isVirgin());
-            Log.d(TAG, "stackCalculator.isResult(): " + stackCalculator.isResult());
+            L.d(TAG, "argX.isVirgin(): " + argX.isVirgin());
+            L.d(TAG, "stackCalculator.isResult(): " + stackCalculator.isResult());
             if (!argX.isEditable() || !stackCalculator.isResult()) { // И если еще ничего не вводили или выведен ответ
-                Log.d(TAG, "Еще ничего не вводили или выведен ответ");
+                L.d(TAG, "Еще ничего не вводили или выведен ответ");
 //                if (argX.isVirgin()) {
 //
 //                }
                 mainDisplay.setFixModeScale(Character.digit(pressedKey, 10)); // то включаем режим FIX
-                Log.d(TAG, "Включаем режим FIX, выводим старое число в новом формате и выходим");
+                L.d(TAG, "Включаем режим FIX, выводим старое число в новом формате и выходим");
                 makeArg();// выводим старое число в новом формате
                 return; //и выходим
             }
@@ -188,7 +188,7 @@ public class EditX {
     void setNumber(double doubleNumber) {
         argX.setDouble(doubleNumber);
         makeArg();
-        Log.d(TAG, "Отобразили на дисплее.");
+        L.d(TAG, "Отобразили на дисплее.");
     }
 
     void setFixMode() {
@@ -223,12 +223,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult;//; // 
             cplxResult = complexStackCalculator.cplxSin(cplxNum);
-            Log.d(TAG, "sin(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "sin(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -244,12 +244,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; //; // 
             cplxResult = complexStackCalculator.cplxArsh(cplxNum);
-            Log.d(TAG, "Arsh(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "Arsh(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -265,12 +265,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; //; // 
             cplxResult = complexStackCalculator.cplxAsin(cplxNum);
-            Log.d(TAG, "asin(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "asin(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -286,12 +286,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; //; // 
             cplxResult = complexStackCalculator.cplxSinh(cplxNum);
-            Log.d(TAG, "sinh(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "sinh(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -307,12 +307,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; //; // 
             cplxResult = complexStackCalculator.cplxCos(cplxNum);
-            Log.d(TAG, "cos(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "cos(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -328,12 +328,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; //; // 
             cplxResult = complexStackCalculator.cplxArch(cplxNum);
-            Log.d(TAG, "arch(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "arch(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -349,12 +349,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplxAcos(cplxNum);
-            Log.d(TAG, "acos(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "acos(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -370,12 +370,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplxCosh(cplxNum);
-            Log.d(TAG, "cosh(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "cosh(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -391,12 +391,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplxTan(cplxNum);
-            Log.d(TAG, "tan(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "tan(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -412,12 +412,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplxArth(cplxNum);
-            Log.d(TAG, "arth(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "arth(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -433,12 +433,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplxAtan(cplxNum);
-            Log.d(TAG, "atan(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "atan(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -454,12 +454,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplxTanh(cplxNum);
-            Log.d(TAG, "tanh(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "tanh(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -475,12 +475,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplxSqrt(cplxNum);
-            Log.d(TAG, "sqrt(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "sqrt(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -496,12 +496,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplxCbrt(cplxNum);
-            Log.d(TAG, "cbrt(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "cbrt(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -517,12 +517,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplxLog(cplxNum);
-            Log.d(TAG, "ln(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "ln(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -538,12 +538,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplxExp(cplxNum);
-            Log.d(TAG, "exp(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "exp(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -559,12 +559,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplxLog10(cplxNum);
-            Log.d(TAG, "Log(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "Log(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -580,12 +580,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplx10x(cplxNum);
-            Log.d(TAG, "10^(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "10^(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -601,12 +601,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplxPower2(cplxNum);
-            Log.d(TAG, "(" + cplxNum + ")^2 = " + cplxResult);
+            L.d(TAG, "(" + cplxNum + ")^2 = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -622,12 +622,12 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             Complex cplxResult; // 
             cplxResult = complexStackCalculator.cplxReciprocal(cplxNum);
-            Log.d(TAG, "1/(" + cplxNum + ") = " + cplxResult);
+            L.d(TAG, "1/(" + cplxNum + ") = " + cplxResult);
             argA = new ArgX(cplxResult.getReal());
             argB = new ArgX(cplxResult.getImaginary());
             argX = new ArgX(argA.getArgX());
@@ -642,11 +642,11 @@ public class EditX {
     void toA() {
         if (argX.isEditable() || argB.isVirgin()) {//Если вводили число и нажали "A", то заносим введенное число в argA
             argA = new ArgX(argX.getArgX());
-            Log.d(TAG, "заносим введенное число в argA.");
+            L.d(TAG, "заносим введенное число в argA.");
             newInput = true;
         } else {//иначе выводим на экран, то что лежит в argA
             argX = new ArgX(argA.getArgX());
-            Log.d(TAG, "выводим на экран, то что лежит в argA.");
+            L.d(TAG, "выводим на экран, то что лежит в argA.");
         }
         makeArg();
     }
@@ -654,24 +654,24 @@ public class EditX {
     void toB() {
         if (argX.isEditable() || argB.isVirgin()) {//Если вводили число и нажали "B", то заносим введенное число в argA
             argB = new ArgX(argX.getArgX());
-            Log.d(TAG, "заносим введенное число в argB.");
+            L.d(TAG, "заносим введенное число в argB.");
             newInput = true;
         } else {//иначе выводим на экран, то что лежит в argB
             argX = new ArgX(argB.getArgX());
-            Log.d(TAG, "выводим на экран, то что лежит в argB.");
+            L.d(TAG, "выводим на экран, то что лежит в argB.");
         }
         makeArg();
     }
 
     void r_to_p() throws MyExceptions {
-        Log.d(TAG, "Будем переводить радиальные координаты в полярные.");
+        L.d(TAG, "Будем переводить радиальные координаты в полярные.");
         if (argA.isVirgin()) {
             argA.setDouble(0.0);
-            Log.d(TAG, "argA было пустым, заносим в argA 0.0");
+            L.d(TAG, "argA было пустым, заносим в argA 0.0");
         }
         if (argB.isVirgin()) {
             argB.setDouble(0.0);
-            Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+            L.d(TAG, "argB было пустым, заносим в argB 0.0");
         }
         stackCalculator.r_to_p(argA, argB);
         argX = new ArgX(argA.getArgX());
@@ -681,14 +681,14 @@ public class EditX {
     }
 
     void p_to_r() throws MyExceptions {
-        Log.d(TAG, "Будем переводить полярные координаты в радиальные.");
+        L.d(TAG, "Будем переводить полярные координаты в радиальные.");
         if (argA.isVirgin()) {
             argA.setDouble(0.0);
-            Log.d(TAG, "argA было пустым, заносим в argA 0.0");
+            L.d(TAG, "argA было пустым, заносим в argA 0.0");
         }
         if (argB.isVirgin()) {
             argB.setDouble(0.0);
-            Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+            L.d(TAG, "argB было пустым, заносим в argB 0.0");
         }
         stackCalculator.p_to_r(argA, argB);
         argX = new ArgX(argA.getArgX());
@@ -785,7 +785,7 @@ public class EditX {
         argX = new ArgX(calculatorSelector(argX.getArgX(), stackCalculator.PLUS));
         newInput = true;
         calcpress = false;
-//        Log.d(TAG, "Флаг Result: " + stackCalculator.isResult());
+//        L.d(TAG, "Флаг Result: " + stackCalculator.isResult());
         makeArg();
     }
 
@@ -793,7 +793,7 @@ public class EditX {
         argX = new ArgX(calculatorSelector(argX.getArgX(), stackCalculator.MINUS));
         newInput = true;
         calcpress = false;
-//        Log.d(TAG, "Флаг Result: " + stackCalculator.isResult());
+//        L.d(TAG, "Флаг Result: " + stackCalculator.isResult());
         makeArg();
     }
 
@@ -801,7 +801,7 @@ public class EditX {
         argX = new ArgX(calculatorSelector(argX.getArgX(), stackCalculator.MULTIPLY));
         newInput = true;
         calcpress = false;
-//        Log.d(TAG, "Флаг Result: " + stackCalculator.isResult());
+//        L.d(TAG, "Флаг Result: " + stackCalculator.isResult());
         makeArg();
     }
 
@@ -809,7 +809,7 @@ public class EditX {
         argX = new ArgX(calculatorSelector(argX.getArgX(), stackCalculator.DIVIDE));
         newInput = true;
         calcpress = false;
-//        Log.d(TAG, "Флаг Result: " + stackCalculator.isResult());
+//        L.d(TAG, "Флаг Result: " + stackCalculator.isResult());
         makeArg();
     }
 
@@ -817,7 +817,7 @@ public class EditX {
         argX = new ArgX(calculatorSelector(argX.getArgX(), stackCalculator.POWER));
         newInput = true;
         calcpress = false;
-//        Log.d(TAG, "Флаг Result: " + stackCalculator.isResult());
+//        L.d(TAG, "Флаг Result: " + stackCalculator.isResult());
         makeArg();
     }
 
@@ -825,7 +825,7 @@ public class EditX {
         argX = new ArgX(calculatorSelector(argX.getArgX(), stackCalculator.X_SQR_Y));
         newInput = true;
         calcpress = false;
-//        Log.d(TAG, "Флаг Result: " + stackCalculator.isResult());
+//        L.d(TAG, "Флаг Result: " + stackCalculator.isResult());
         makeArg();
     }
 
@@ -833,7 +833,7 @@ public class EditX {
         argX = new ArgX(calcAll(argX.getArgX()));
         newInput = true;
         calcpress = true;
-//        Log.d(TAG, "Флаг Result: " + stackCalculator.isResult());
+//        L.d(TAG, "Флаг Result: " + stackCalculator.isResult());
         makeArg();
 
     }
@@ -843,22 +843,22 @@ public class EditX {
             return;
         }
         if (!argX.isExponent()) { //Если флаг EXP выключен, то редактируем мантиссу
-            Log.d(TAG, "Будем редактировать мантиссу");
+            L.d(TAG, "Будем редактировать мантиссу");
             if (!argX.isMantissaFractionalPart()) { //Если флаг argX.isMantissaFractionalPart выключен, то редактируем целую часть мантиссы
-                Log.d(TAG, "Будем редактировать целую часть мантиссы");
+                L.d(TAG, "Будем редактировать целую часть мантиссы");
                 mantissaIntegerPartDel();
             } else { //Иначе редактируем дробную часть мантиссы
-                Log.d(TAG, "Будем редактировать дробную часть мантиссы");
+                L.d(TAG, "Будем редактировать дробную часть мантиссы");
                 if (argX.getMantissaFractionalPart().length() > 0) { // Если длина дробной части мантиссы больше нуля, то удаляем один символ
-                    Log.d(TAG, "Удаляем один символ");
+                    L.d(TAG, "Удаляем один символ");
                     argX.setMantissaFractionalPart(argX.getMantissaFractionalPart().deleteCharAt(argX.getMantissaFractionalPart().length() - 1));
                     if (argX.getMantissaFractionalPart().length() == 0) { //Если после очередного удаления длина дробной части мантиссы стала равна нулю, то поднимаем флаг
-                        Log.d(TAG, "После очередного удаления длина дробной части мантиссы стала равна нулю");
+                        L.d(TAG, "После очередного удаления длина дробной части мантиссы стала равна нулю");
 //                        argX.isMantissaFractionalPart = false; //Нужно ли удалять точку, если дробная часть мантиссы уже закончилась
                     }
                 } else { //длина дробной части мантиссы равна нулю (или меньше)
-                    Log.d(TAG, "Длина дробной части мантиссы равна нулю (или меньше)");
-                    Log.d(TAG, "Убираем точку и редактируем целую часть мантиссы");
+                    L.d(TAG, "Длина дробной части мантиссы равна нулю (или меньше)");
+                    L.d(TAG, "Убираем точку и редактируем целую часть мантиссы");
                     argX.setIsMantissaFractionalPart(false);  //отмечаем это и редактируем целую часть мантиссы
                     mantissaIntegerPartDel();
                 }
@@ -873,7 +873,7 @@ public class EditX {
                 argX.setExponent(argX.getExponent().deleteCharAt(argX.getExponent().length() - 1));
 
                 if (argX.getExponent().length() == 0) { //Если после очередного удаления длина экспоненты стала равна нулю, то обнуляем флаг знака
-                    Log.d(TAG, "После очередного удаления длина экспоненты стала равна нулю, обнуляем флаг знака");
+                    L.d(TAG, "После очередного удаления длина экспоненты стала равна нулю, обнуляем флаг знака");
                     argX.setExponentSign(false);
                 }
             }
@@ -884,7 +884,7 @@ public class EditX {
 
     void openBracket() {
         if (!stackCalculator.isOperationStackEmpty() || (stackCalculator.isNumberStackEmpty()) & newInput) {      // Открываем скобку только в случае, если в стеке операций что-то есть (+,-,*,/,корень, степень) или если стек чисел пуст
-            Log.d(TAG, "Скобка открыта");
+            L.d(TAG, "Скобка открыта");
             status.setBracket(true);
 //            if (operationStack.empty()) {
 //                protocol.print("(");
@@ -909,22 +909,22 @@ public class EditX {
     void closeBracket() throws MyExceptions {
         //operation = NOP;        // При закрытии скобки, вычисляем все в пределах одного стека, и восстанавливаем старые стеки
         double tmp = argX.getArgX();
-        Log.d(TAG, "Набрано: " + tmp + ")");
+        L.d(TAG, "Набрано: " + tmp + ")");
         if (!stackCalculator.isStackForNumberStackEmpty() && !stackCalculator.isStackForOperationStackEmpty()) {
             tmp = calculatorSelector(tmp, stackCalculator.NOP);
             stackCalculator.restoreStacks();
 
             //autoConstant = numberStack2
-            Log.d(TAG, "Восстановлены старые стеки операций и чисел");
+            L.d(TAG, "Восстановлены старые стеки операций и чисел");
         }
         if (stackCalculator.isStackForNumberStackEmpty() && stackCalculator.isStackForOperationStackEmpty()) {
             status.setBracket(false);
-            Log.d(TAG, "Скобка закрыта");
+            L.d(TAG, "Скобка закрыта");
         }
-        Log.d(TAG, "=");
+        L.d(TAG, "=");
 
         if (stackCalculator.isOperationStackEmpty()) {
-            Log.d(TAG, "" + tmp);
+            L.d(TAG, "" + tmp);
         }
         argX = new ArgX(tmp);
         newInput = true;
@@ -935,8 +935,8 @@ public class EditX {
 
     private void mantissaIntegerPartDel() {
         if (argX.getMantissaIntegerPart().length() > 0) {
-            Log.d(TAG, "Длина целой части мантиссы больше нуля");
-            Log.d(TAG, "Удаляем один символ");
+            L.d(TAG, "Длина целой части мантиссы больше нуля");
+            L.d(TAG, "Удаляем один символ");
 
 //            StringBuilder sb = argX.getMantissaIntegerPart();
 //            sb.deleteCharAt(argX.getMantissaIntegerPart().length() - 1);
@@ -944,11 +944,11 @@ public class EditX {
             argX.setMantissaIntegerPart(argX.getMantissaIntegerPart().deleteCharAt(argX.getMantissaIntegerPart().length() - 1));
 
             if (argX.getMantissaIntegerPart().length() == 0) { //Если после очередного удаления длина целой части мантиссы стала равна нулю, то обнуляем флаг знака
-                Log.d(TAG, "После очередного удаления длина целой части мантиссы стала равна нулю, обнуляем флаг знака");
+                L.d(TAG, "После очередного удаления длина целой части мантиссы стала равна нулю, обнуляем флаг знака");
                 argX.setSign(false);
             }
         } else {
-            Log.d(TAG, "Длина целой части мантиссы равна нулю, ничего удалять не будем");
+            L.d(TAG, "Длина целой части мантиссы равна нулю, ничего удалять не будем");
             newInput = true;
         }
 
@@ -956,11 +956,11 @@ public class EditX {
 
     private void numberPartDel(StringBuilder stringBuilder) {
         if (stringBuilder.length() > 0) {
-            Log.d(TAG, "Длина строки больше нуля");
-            Log.d(TAG, "Удаляем один символ");
+            L.d(TAG, "Длина строки больше нуля");
+            L.d(TAG, "Удаляем один символ");
             stringBuilder.deleteCharAt(stringBuilder.length() - 1);
         } else {
-            Log.d(TAG, "Длина строки равна нулю, ничего удалять не будем");
+            L.d(TAG, "Длина строки равна нулю, ничего удалять не будем");
         }
     }
 
@@ -1010,7 +1010,7 @@ public class EditX {
         if (!argX.isEditable()) {
             return;
         }
-        Log.d(TAG, "Переходим к вводу экспоненты");
+        L.d(TAG, "Переходим к вводу экспоненты");
         if (!argX.isExponent()) {
             if ((argX.getMantissaIntegerPart().length() + argX.getMantissaFractionalPart().length() + argX.getExponent().length()) >= (mainDisplay.numberLength - argX.getExponent().length() - 1)) {
                 customToast.setToastText("Не хватает места для ввода экспоненты, удалите несколько символов");
@@ -1045,13 +1045,13 @@ public class EditX {
     private double calcAll(double number) throws MyExceptions {
         while (!stackCalculator.isStackForNumberStackEmpty() && !stackCalculator.isOperationStackEmpty()) { // Пока стеки стеков не опустеют, продолжаем вычислять
             number = calculatorSelector(number, stackCalculator.NOP);
-            Log.d(TAG, "Посчитано: " + number);
+            L.d(TAG, "Посчитано: " + number);
             //printCalc (tmp+"");
             stackCalculator.oldStacksRestore();
         }
         if (stackCalculator.isStackForNumberStackEmpty() && stackCalculator.isStackForOperationStackEmpty()) {
             status.setBracket(false);
-            Log.d(TAG, "Скобка закрыта");
+            L.d(TAG, "Скобка закрыта");
         }
         //operation = NOP;
 
@@ -1063,11 +1063,11 @@ public class EditX {
         if (mode.getMode() == mode.COMPLEX && !argA.isVirgin()) {  //Если работаем с комплексными числами и уже что-то введено, то вызываем complexStackCalculator
 //            if (argA.isVirgin()) {
 //                argA.setDouble(0.0);
-//                Log.d(TAG, "argA было пустым, заносим в argA 0.0");
+//                L.d(TAG, "argA было пустым, заносим в argA 0.0");
 //            }
             if (argB.isVirgin()) {
                 argB.setDouble(0.0);
-                Log.d(TAG, "argB было пустым, заносим в argB 0.0");
+                L.d(TAG, "argB было пустым, заносим в argB 0.0");
             }
             Complex cplxNum = new Complex(argA.getArgX(), argB.getArgX());
             cplxNum = complexStackCalculator.complexStackCalculator(cplxNum, currentOperation);
@@ -1083,31 +1083,31 @@ public class EditX {
     private double stackCalculatorSelector(double currentNumber, int currentOperation) throws MyExceptions {
         mainDisplay.offSciMode();
         if (stackCalculator.isNumberStackEmpty()) {//Если стек чисел пуст
-            Log.d(TAG, "Стек чисел пуст");
+            L.d(TAG, "Стек чисел пуст");
             if (currentOperation != stackCalculator.NOP) {//Если была любая операция кроме NOP, т. е. кроме "=" или закрытия скобки, то заносим все в стек
-                Log.d(TAG, "Еще не было операций, заношу значения в новый стек чисел и в новый стек операций");
+                L.d(TAG, "Еще не было операций, заношу значения в новый стек чисел и в новый стек операций");
                 calc = false;
                 currentNumber = stackCalculator.putInStack(currentNumber, currentOperation);
             }
             if (currentOperation == stackCalculator.NOP) {//Если была операция NOP, т. е. "=" или закрытие скобки
-                Log.d(TAG, "Стек чисел пуст и было нажато = , здесь должны быть вычисления с использованием постоянных");
+                L.d(TAG, "Стек чисел пуст и было нажато = , здесь должны быть вычисления с использованием постоянных");
                 currentNumber = stackCalculator.calcAutoConstant(currentNumber);
                 calc = true;
             }
             return currentNumber;
         }
         // Здесь уже ясно, что в стеке чисел что-то есть
-        Log.d(TAG, "В стеках чисел и операций уже что-то есть");
-//        Log.d(TAG, "argX.isVirgin(): " + argX.isVirgin());
-//        Log.d(TAG, "stackCalculator.isResult(): " + stackCalculator.isResult());
+        L.d(TAG, "В стеках чисел и операций уже что-то есть");
+//        L.d(TAG, "argX.isVirgin(): " + argX.isVirgin());
+//        L.d(TAG, "stackCalculator.isResult(): " + stackCalculator.isResult());
 
 //        if (!stackCalculator.isResult()) { //В стеке чисел и операций уже что-то есть, новое число не вводили, а нажали на операцию, значит в стеке чисел - автоконстанта
-//            Log.d(TAG, "Но, новое число не вводили, а нажали на операцию, значит в стеке чисел - автоконстанта");
+//            L.d(TAG, "Но, новое число не вводили, а нажали на операцию, значит в стеке чисел - автоконстанта");
 //            currentNumber = stackCalculator.setAutoConstant(currentNumber);
 //            calc = false;
 //            return currentNumber;
 //        }
-        Log.d(TAG, "Считаем!");
+        L.d(TAG, "Считаем!");
         currentNumber = stackCalculator.calc(currentNumber, currentOperation); //Считаем
         calc = true;
         if (Double.isInfinite(currentNumber)) {
@@ -1143,15 +1143,15 @@ public class EditX {
 
     void memoryPlus() throws MyExceptions {
         double tmp1 = argX.getArgX();
-        Log.d(TAG, "Набрано: " + tmp1 + " M+");
+        L.d(TAG, "Набрано: " + tmp1 + " M+");
         if (!stackCalculator.isOperationStackEmpty()) {
             tmp1 = calcAll(tmp1);
         }
-        Log.d(TAG, "Посчитано: " + tmp1);
+        L.d(TAG, "Посчитано: " + tmp1);
         argX.setDouble(tmp1);
         makeArg();
 //        plus();
-        Log.d(TAG, "Прибавляю к памяти: " + tmp1);
+        L.d(TAG, "Прибавляю к памяти: " + tmp1);
         double tmp2 = getMemory();
         //argX.setDouble(tmp2);
 //        double tmp3;
@@ -1164,7 +1164,7 @@ public class EditX {
 
     private void setMemory(double mem) {
         memoryStore.setMemory(mem);
-        Log.d(TAG, "Теперь в памяти: " + mem);
+        L.d(TAG, "Теперь в памяти: " + mem);
     }
 
     private double getMemory() {
@@ -1188,22 +1188,22 @@ public class EditX {
     }
 
     void putDataToStack() throws MyExceptions {
-        Log.d(TAG, "argX.isVirgin(): " + argX.isVirgin());
-        Log.d(TAG, "argX.isEditable(): " + argX.isEditable());
+        L.d(TAG, "argX.isVirgin(): " + argX.isVirgin());
+        L.d(TAG, "argX.isEditable(): " + argX.isEditable());
         if (!argX.isEditable() && !stackCalculator.isResult()) { //Если argX не редактируемое, значит ничего не ввели, значит ничего не делаем.
-            Log.d(TAG, "argX не редактируемое, значит ничего не ввели, значит ничего не делаем.");
+            L.d(TAG, "argX не редактируемое, значит ничего не ввели, значит ничего не делаем.");
             return;
         }
         double currentNum = argX.getArgX();
-        Log.d(TAG, "currentNum = " + currentNum);
+        L.d(TAG, "currentNum = " + currentNum);
         if (stackCalculator.isMultiply()) { //Если было нажато УМНОЖИТЬ
             double dataValue = stackCalculator.getNumberForStatistic();// берем число из стека калькулятора
             int i = (int) currentNum;// введенное число - это число раз, которое нужно положить число в стек
             argX.setDouble(statisticMode.pushMultipleNumberToStack(dataValue, i));//здесь кладем много значений в SD стек и выводим размер стека
-            Log.d(TAG, "Число " + dataValue + " положено в стек " + currentNum + " раз.");
+            L.d(TAG, "Число " + dataValue + " положено в стек " + currentNum + " раз.");
         } else {
             argX.setDouble(statisticMode.singleNumberToStack(currentNum)); //здесь кладем одно текущее число в SD стек и выводим размер стека
-            Log.d(TAG, "В стек положено число " + currentNum);
+            L.d(TAG, "В стек положено число " + currentNum);
 
         }
         newInput = true;
@@ -1213,14 +1213,14 @@ public class EditX {
     void deleteDataFromStack() throws MyExceptions {
         //Если SD стек пуст
         if (statisticMode.isStackEmpty()) {
-            Log.d(TAG, "Стек пуст, ничего не делаем.");
+            L.d(TAG, "Стек пуст, ничего не делаем.");
             return;
         }
 
         //Если ничего не вводили, то удаляем одно последнее значение
         if (!argX.isEditable() && !stackCalculator.isResult()) {
             argX.setDouble(statisticMode.deleteTopNumber());
-            Log.d(TAG, "Ничего не вводили, удаляем одно последнее значение.");
+            L.d(TAG, "Ничего не вводили, удаляем одно последнее значение.");
             newInput = true;
             makeArg();
             return;
@@ -1231,10 +1231,10 @@ public class EditX {
             double dataValue = stackCalculator.getNumberForStatistic();// берем число из стека калькулятора
             int i = (int) currentNum;// введенное число - это число раз, которое нужно удалить число из стека
             argX.setDouble(statisticMode.deleteMultipleNumberFromStack(dataValue, i));//здесь удаляем много значений из SD стека и выводим размер стека
-            Log.d(TAG, "Число " + dataValue + " удалено из стека " + currentNum + " раз.");
+            L.d(TAG, "Число " + dataValue + " удалено из стека " + currentNum + " раз.");
         } else {//Если в стеке операций не умножить, ищем в стеке введенное число и удаляем его из стека
             argX.setDouble(statisticMode.deleteSingleNumber(currentNum)); //здесь кладем одно текущее число в SD стек и выводим размер стека
-            Log.d(TAG, "В стек положено число " + currentNum);
+            L.d(TAG, "В стек положено число " + currentNum);
         }
         newInput = true;
         makeArg();
@@ -1297,44 +1297,44 @@ public class EditX {
         dfs = new DecimalFormatSymbols(defLocale);
         if (argX.isSign()) {//Если есть знак, то добавляем MinusSign
             sb.append(dfs.getMinusSign());
-            Log.d(TAG, "Есть знак, добавили MinusSign: " + sb);
+            L.d(TAG, "Есть знак, добавили MinusSign: " + sb);
             protocol.println("Есть знак, добавили MinusSign: " + sb);
         }
         sb.append(argX.getMantissaIntegerPart());//Добавляем целую часть мантиссы
-        Log.d(TAG, "Добавили целую часть мантиссы: " + sb);
+        L.d(TAG, "Добавили целую часть мантиссы: " + sb);
         protocol.println("Добавили целую часть мантиссы: " + sb);
         if (argX.isMantissaFractionalPart()) {//Если есть дробная часть мантиссы, то добавляем DecimalSeparator
             sb.append(dfs.getDecimalSeparator());
-            Log.d(TAG, "Есть дробная часть мантиссы, добавили DecimalSeparator: " + sb);
+            L.d(TAG, "Есть дробная часть мантиссы, добавили DecimalSeparator: " + sb);
             protocol.println("Есть дробная часть мантиссы, добавили DecimalSeparator: " + sb);
         }
         sb.append(argX.getMantissaFractionalPart());//Добавляем дробную часть мантиссы
-        Log.d(TAG, "Добавили дробную часть мантиссы: " + sb);
+        L.d(TAG, "Добавили дробную часть мантиссы: " + sb);
         protocol.println("Добавили дробную часть мантиссы: " + sb);
         if (argX.isExponent()) {//Если есть экспоненциальная часть, то добавляем ExponentSeparator
             sb.append(dfs.getExponentSeparator());
-            Log.d(TAG, "Есть экспоненциальная часть, добавили ExponentSeparator: " + sb);
+            L.d(TAG, "Есть экспоненциальная часть, добавили ExponentSeparator: " + sb);
             protocol.println("Есть экспоненциальная часть, добавили ExponentSeparator: " + sb);
             if (argX.isExponentSign()) {//Если есть знак у экспоненциальной части, то добавляем MinusSign
                 sb.append(dfs.getMinusSign());
-                Log.d(TAG, "Есть знак у экспоненциальной части, добавили MinusSign: " + sb);
+                L.d(TAG, "Есть знак у экспоненциальной части, добавили MinusSign: " + sb);
                 protocol.println("Есть знак у экспоненциальной части, добавили MinusSign: " + sb);
             }
             sb.append(argX.getExponent());
-            Log.d(TAG, "Добавили экспоненциальную часть: " + sb);
+            L.d(TAG, "Добавили экспоненциальную часть: " + sb);
             protocol.println("Добавили экспоненциальную часть: " + sb);
 //        sb.append(argX.getArgXSB());
         } else {
-            Log.d(TAG, "Нет экспоненциальной части.");
+            L.d(TAG, "Нет экспоненциальной части.");
             protocol.println(TAG + "Нет экспоненциальной части.");
         }
-        Log.d(TAG, "В буфер обмена отправляю: " + sb);
+        L.d(TAG, "В буфер обмена отправляю: " + sb);
         protocol.println(TAG + "В буфер обмена отправляю: " + sb);
         return sb;
     }
 
     void pasteFromClipboard(String str) {
-        Log.d(TAG, "Из буфера обмена получено: " + str);
+        L.d(TAG, "Из буфера обмена получено: " + str);
         protocol.println("Из буфера обмена получено: " + str);
         StringBuilder sb = (createDouble(str));
         if (sb.length() == 0) {
@@ -1348,14 +1348,14 @@ public class EditX {
     }
 
     private StringBuilder createDouble(final String str) {
-        Log.d(TAG, "Получена строка: " + str);
+        L.d(TAG, "Получена строка: " + str);
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
             int charCode = (int) ch;
-            Log.d(TAG, "Символ [" + i + "]: " + ch + " его код: " + charCode);
+            L.d(TAG, "Символ [" + i + "]: " + ch + " его код: " + charCode);
         }
         if (str.isEmpty() || str == null) {//Если строка пустая, то выходим нулем
-            Log.d(TAG, "Строка пустая, выходим с нулем.");
+            L.d(TAG, "Строка пустая, выходим с нулем.");
             return new StringBuilder("");
         }
 //        final char[] chars = str.toCharArray();
@@ -1364,7 +1364,7 @@ public class EditX {
         int curIndex;
 
         // Удаляем GroupingSeparator
-        Log.d(TAG, "Удаляем GroupingSeparator.");
+        L.d(TAG, "Удаляем GroupingSeparator.");
         int groupingSeparatorCounter = 0;
         curIndex = sb.indexOf("" + '\u00A0');
         while (curIndex != -1) {
@@ -1402,7 +1402,7 @@ public class EditX {
         }
 
         //Приводим Exponent Separator к общему виду
-        Log.d(TAG, "Приводим Exponent Separator к общему виду.");
+        L.d(TAG, "Приводим Exponent Separator к общему виду.");
 
         for (int i = 0; i < sb.length(); i++) {
             char ch = str.charAt(i);
@@ -1462,20 +1462,20 @@ public class EditX {
         }
 
         if (exponentSeparatorCounter > 1) {
-            Log.d(TAG, "Ошибка. ExponentSeparator был найден " + exponentSeparatorCounter + " раз.");
+            L.d(TAG, "Ошибка. ExponentSeparator был найден " + exponentSeparatorCounter + " раз.");
             return new StringBuilder("");
         }
 
         //Удаляем + перед экспоненциальной частью, если он есть
         curIndex = sb.indexOf("E+");
         while (curIndex != -1) {
-            Log.d(TAG, "Удаляем + перед экспоненциальной частью.");
+            L.d(TAG, "Удаляем + перед экспоненциальной частью.");
             sb.replace(curIndex, curIndex + 2, "E");
             curIndex = sb.indexOf("E+");
         }
 
         // Приводим MinusSign к общему виду
-        Log.d(TAG, "Приводим MinusSign к общему виду.");
+        L.d(TAG, "Приводим MinusSign к общему виду.");
         curIndex = sb.indexOf("" + '\u2212');
         while (curIndex != -1) {
             sb.replace(curIndex, curIndex + 1, "-");
@@ -1483,7 +1483,7 @@ public class EditX {
         }
 
         // Приводим ZeroDigit к общему виду
-        Log.d(TAG, "Приводим ZeroDigit к общему виду.");
+        L.d(TAG, "Приводим ZeroDigit к общему виду.");
         curIndex = sb.indexOf("" + '\u0660');
         while (curIndex != -1) {
             sb.replace(curIndex, curIndex + 1, "0");
@@ -1522,7 +1522,7 @@ public class EditX {
 
         curIndex = sb.indexOf("\n");
         while (curIndex != -1) {
-            Log.d(TAG, "Удаляем перевод строки.");
+            L.d(TAG, "Удаляем перевод строки.");
             sb.deleteCharAt(curIndex);
             curIndex = sb.indexOf("\n");
         }
@@ -1544,34 +1544,34 @@ public class EditX {
                     break;
             }
         }
-        Log.d(TAG, "Число arabicDecimalSeparator = " + arabicDecimalSeparatorCounter);
-        Log.d(TAG, "Число точек = " + dotCounter);
-        Log.d(TAG, "Число запятых = " + commaCounter);
+        L.d(TAG, "Число arabicDecimalSeparator = " + arabicDecimalSeparatorCounter);
+        L.d(TAG, "Число точек = " + dotCounter);
+        L.d(TAG, "Число запятых = " + commaCounter);
 
         if (groupingSeparatorCounter > 0) {//groupingSeparator уже удален, будем менять DecimalSeparator на точку
-            Log.d(TAG, "groupingSeparator уже удален, будем менять DecimalSeparator на точку.");
+            L.d(TAG, "groupingSeparator уже удален, будем менять DecimalSeparator на точку.");
             if ((arabicDecimalSeparatorCounter + dotCounter + commaCounter) > 1) {
-                Log.d(TAG, "Ошибка. groupingSeparator уже был удален, DecimalSeparator может быть только один.");
+                L.d(TAG, "Ошибка. groupingSeparator уже был удален, DecimalSeparator может быть только один.");
                 return new StringBuilder("");
             }
             if (arabicDecimalSeparatorCounter != 0) {
-                Log.d(TAG, "Меняем ArabicDecimalSeparator на точку.");
+                L.d(TAG, "Меняем ArabicDecimalSeparator на точку.");
                 int aDSIndex = sb.indexOf("" + '\u066B');
                 sb.replace(aDSIndex, aDSIndex + 1, ".");
             } else if (commaCounter != 0) {
-                Log.d(TAG, "Меняем запятую на точку.");
+                L.d(TAG, "Меняем запятую на точку.");
                 int commaIndex = sb.indexOf(",");
                 sb.replace(commaIndex, commaIndex + 1, ".");
             } else {
-                Log.d(TAG, "DecimalSeparator это точка, оставляем как есть.");
+                L.d(TAG, "DecimalSeparator это точка, оставляем как есть.");
             }
         } else {
             if (arabicDecimalSeparatorCounter > 1) {
-                Log.d(TAG, "Ошибка. ArabicDecimalSeparator был найден " + arabicDecimalSeparatorCounter + " раз.");
+                L.d(TAG, "Ошибка. ArabicDecimalSeparator был найден " + arabicDecimalSeparatorCounter + " раз.");
                 return new StringBuilder("");
             }
             if (arabicDecimalSeparatorCounter == 1) {
-                Log.d(TAG, "Был найден ArabicDecimalSeparator, значит он и есть DecimalSeparator удаляем все точки и запятые.");
+                L.d(TAG, "Был найден ArabicDecimalSeparator, значит он и есть DecimalSeparator удаляем все точки и запятые.");
                 curIndex = sb.indexOf(".");
                 while (curIndex != -1) {
                     sb.deleteCharAt(curIndex);
@@ -1586,40 +1586,40 @@ public class EditX {
                 sb.replace(aDSIndex, aDSIndex + 1, ".");
             }
             //Здесь уже ясно, что число ArabicDecimalSeparator = 0
-            Log.d(TAG, "Здесь уже ясно, что число ArabicDecimalSeparator = 0.");
+            L.d(TAG, "Здесь уже ясно, что число ArabicDecimalSeparator = 0.");
             if (dotCounter == 0) {
                 if (commaCounter == 0) {//у нас целое число без GroupingSeparator и без DecimalSeparator
-                    Log.d(TAG, "У нас целое число без GroupingSeparator и без DecimalSeparator.");
+                    L.d(TAG, "У нас целое число без GroupingSeparator и без DecimalSeparator.");
                 }
                 if (commaCounter == 1) {//Запятая либо DecimalSeparator, либо GroupingSeparator
-                    Log.d(TAG, "Запятая либо DecimalSeparator, либо GroupingSeparator.");
+                    L.d(TAG, "Запятая либо DecimalSeparator, либо GroupingSeparator.");
                     int expIndex = sb.indexOf("E");
                     int commaIndex = sb.indexOf(",");
                     if (expIndex == -1) {
                         expIndex = sb.length();
                     }
                     if ((expIndex - commaIndex) != 4) { //запятая отстоит от знака экспоненты не на 4 символа - следовательно запятая это DecimalSeparator, меняем ее на точку
-                        Log.d(TAG, "Запятая отстоит от знака экспоненты не на 4 символа - следовательно запятая это DecimalSeparator, меняем ее на точку.");
+                        L.d(TAG, "Запятая отстоит от знака экспоненты не на 4 символа - следовательно запятая это DecimalSeparator, меняем ее на точку.");
                         sb.replace(commaIndex, commaIndex + 1, ".");
                     } else {//запятая отстоит от знака экспоненты на 4 символа - определяем кто есть кто из настроек локали
-                        Log.d(TAG, "Запятая отстоит от знака экспоненты на 4 символа - определяем кто есть кто из настроек локали.");
+                        L.d(TAG, "Запятая отстоит от знака экспоненты на 4 символа - определяем кто есть кто из настроек локали.");
                         DecimalFormatSymbols dfs;
                         Locale defLocale = Locale.getDefault();
                         dfs = new DecimalFormatSymbols(defLocale);
                         switch (dfs.getDecimalSeparator()) {
                             case '.':// В данной локали DecimalSeparator это точка, значит считаем, что запятая это GroupingSeparator. Удаляем ее.
-                                Log.d(TAG, "В данной локали DecimalSeparator это точка, значит считаем, что запятая это GroupingSeparator. Удаляем ее.");
+                                L.d(TAG, "В данной локали DecimalSeparator это точка, значит считаем, что запятая это GroupingSeparator. Удаляем ее.");
                                 sb.deleteCharAt(commaIndex);
                                 break;
                             case ',':// В данной локали DecimalSeparator это запятая. Меняем запятую на точку
-                                Log.d(TAG, "В данной локали DecimalSeparator это запятая. Меняем запятую на точку.");
+                                L.d(TAG, "В данной локали DecimalSeparator это запятая. Меняем запятую на точку.");
                                 sb.replace(commaIndex, commaIndex + 1, ".");
                                 break;
                         }
                     }
                 }
                 if (commaCounter > 1) {//Запятая это GroupingSeparator, просто удаляем все запятые
-                    Log.d(TAG, "Запятая это GroupingSeparator, просто удаляем все запятые.");
+                    L.d(TAG, "Запятая это GroupingSeparator, просто удаляем все запятые.");
                     curIndex = sb.indexOf(",");
                     while (curIndex != -1) {
                         sb.deleteCharAt(curIndex);
@@ -1629,46 +1629,46 @@ public class EditX {
             }
             if (dotCounter == 1) {
                 if (commaCounter == 0) {//Точка либо DecimalSeparator, либо GroupingSeparator
-                    Log.d(TAG, "Точка либо DecimalSeparator, либо GroupingSeparator.");
+                    L.d(TAG, "Точка либо DecimalSeparator, либо GroupingSeparator.");
                     int expIndex = sb.indexOf("E");
                     int dotIndex = sb.indexOf(".");
                     if (expIndex == -1) {
                         expIndex = sb.length();
                     }
                     if ((expIndex - dotIndex) == 4) {//точка отстоит от знака экспоненты на 4 символа - определяем кто есть кто из настроек локали
-                        Log.d(TAG, "Точка отстоит от знака экспоненты на 4 символа - определяем кто есть кто из настроек локали.");
+                        L.d(TAG, "Точка отстоит от знака экспоненты на 4 символа - определяем кто есть кто из настроек локали.");
                         DecimalFormatSymbols dfs;
                         Locale defLocale = Locale.getDefault();
                         dfs = new DecimalFormatSymbols(defLocale);
                         switch (dfs.getDecimalSeparator()) {
                             case '.':// В данной локали DecimalSeparator это точка
-                                Log.d(TAG, "В данной локали DecimalSeparator это точка.");
+                                L.d(TAG, "В данной локали DecimalSeparator это точка.");
                                 break;
                             case ',':// В данной локали DecimalSeparator это запятая. Удаляем точку
-                                Log.d(TAG, "В данной локали DecimalSeparator это запятая. Удаляем точку.");
+                                L.d(TAG, "В данной локали DecimalSeparator это запятая. Удаляем точку.");
                                 sb.deleteCharAt(dotIndex);
                                 break;
                         }
                     } else { //точка отстоит от знака экспоненты не на 4 символа - следовательно точка это DecimalSeparator
-                        Log.d(TAG, "Точка отстоит от знака экспоненты не на 4 символа - следовательно точка это DecimalSeparator.");
+                        L.d(TAG, "Точка отстоит от знака экспоненты не на 4 символа - следовательно точка это DecimalSeparator.");
                     }
                 }
                 if (commaCounter == 1) {//В этом случае, кто правее тот и DecimalSeparator
-                    Log.d(TAG, "Число точек и число запятых равно 1. В этом случае, кто правее тот и DecimalSeparator.");
+                    L.d(TAG, "Число точек и число запятых равно 1. В этом случае, кто правее тот и DecimalSeparator.");
                     int dotIndex = sb.indexOf(".");
                     int commaIndex = sb.indexOf(",");
                     if (dotIndex > commaIndex) { // точка правее, удаляем запятую
-                        Log.d(TAG, "Точка правее, удаляем запятую.");
+                        L.d(TAG, "Точка правее, удаляем запятую.");
                         sb.deleteCharAt(commaIndex);
                     } else { // иначе запятая правее, удаляем точку и меняем запятую на точку
-                        Log.d(TAG, "Запятая правее, удаляем точку и меняем запятую на точку.");
+                        L.d(TAG, "Запятая правее, удаляем точку и меняем запятую на точку.");
                         sb.deleteCharAt(dotIndex);
                         curIndex = sb.indexOf(",");
                         sb.replace(curIndex, curIndex + 1, ".");
                     }
                 }
                 if (commaCounter > 1) {//у нас DecimalSeparator это точка, удаляем запятые
-                    Log.d(TAG, "У нас DecimalSeparator это точка, удаляем запятые.");
+                    L.d(TAG, "У нас DecimalSeparator это точка, удаляем запятые.");
                     curIndex = sb.indexOf(",");
                     while (curIndex != -1) {
                         sb.deleteCharAt(curIndex);
@@ -1678,7 +1678,7 @@ public class EditX {
             }
             if (dotCounter > 1) {
                 if (commaCounter == 0) {//Точка GroupingSeparator, просто удаляем точки
-                    Log.d(TAG, "Точка это GroupingSeparator, просто удаляем точки.");
+                    L.d(TAG, "Точка это GroupingSeparator, просто удаляем точки.");
                     curIndex = sb.indexOf(".");
                     while (curIndex != -1) {
                         sb.deleteCharAt(curIndex);
@@ -1686,7 +1686,7 @@ public class EditX {
                     }
                 }
                 if (commaCounter == 1) {//у нас DecimalSeparator это запятая, удаляем точки и меняем запятую на точку
-                    Log.d(TAG, "У нас DecimalSeparator это запятая, удаляем точки и меняем запятую на точку.");
+                    L.d(TAG, "У нас DecimalSeparator это запятая, удаляем точки и меняем запятую на точку.");
                     curIndex = sb.indexOf(".");
                     while (curIndex != -1) {
                         sb.deleteCharAt(curIndex);
@@ -1697,7 +1697,7 @@ public class EditX {
 
                 }
                 if (commaCounter > 1) {//ошибка
-                    Log.d(TAG, "Ошибка. Число точек и число запятых не может одновременно быть больше 1.");
+                    L.d(TAG, "Ошибка. Число точек и число запятых не может одновременно быть больше 1.");
                     return new StringBuilder("");
                 }
 
@@ -1706,11 +1706,11 @@ public class EditX {
         if (!isCreatable("" + sb)) {
             return new StringBuilder("");
         }
-        Log.d(TAG, "Возвращаем преобразованную строку: " + sb);
+        L.d(TAG, "Возвращаем преобразованную строку: " + sb);
         for (int i = 0; i < sb.length(); i++) {
             char ch = sb.charAt(i);
             int charCode = (int) ch;
-            Log.d(TAG, "Символ [" + i + "]: " + ch + " его код: " + charCode);
+            L.d(TAG, "Символ [" + i + "]: " + ch + " его код: " + charCode);
         }
         return sb;
     }
@@ -1733,9 +1733,9 @@ public class EditX {
      * integers in Java 1.6
      */
     private boolean isCreatable(final String str) {
-        Log.d(TAG, "isCreatable() запущен, на входе строка: " + str);
+        L.d(TAG, "isCreatable() запущен, на входе строка: " + str);
         if (StringUtils.isEmpty(str)) { //Если строка пустая, то выходим с отрицательным ответом
-            Log.d(TAG, "Строка пустая, выходим с отрицательным ответом.");
+            L.d(TAG, "Строка пустая, выходим с отрицательным ответом.");
             return false;
         }
         final char[] chars = str.toCharArray();
@@ -1780,75 +1780,75 @@ public class EditX {
         // make a valid number (e.g. chars[0..5] = "1234E")                                 для создания правильного числа
         while (i < sz || i < sz + 1 && allowSigns && !foundDigit) {
             if (chars[i] >= '0' && chars[i] <= '9') {//Если нашли цифру
-                Log.d(TAG, "Нашли цифру: " + chars[i]);
+                L.d(TAG, "Нашли цифру: " + chars[i]);
                 foundDigit = true;
                 allowSigns = false; //Запрещаем символы знака '+' или '-'
 
             } else if (chars[i] == '.') {//Если нашли точку
-                Log.d(TAG, "Нашли точку: " + chars[i]);
+                L.d(TAG, "Нашли точку: " + chars[i]);
                 if (hasDecPoint || hasExp) {
                     // two decimal points or dec in exponent
-                    Log.d(TAG, "Две точки или точка в экспоненциальной части, выходим с отрицательным ответом.");
+                    L.d(TAG, "Две точки или точка в экспоненциальной части, выходим с отрицательным ответом.");
                     return false;//Если две точки или точка в экспоненциальной части, то выходим с отрицательным ответом
                 }
                 hasDecPoint = true;
             } else if (chars[i] == 'e' || chars[i] == 'E') {//Если нашли 'e' или 'E'
-                Log.d(TAG, "Нашли 'e' или 'E': " + chars[i]);
+                L.d(TAG, "Нашли 'e' или 'E': " + chars[i]);
                 // we've already taken care of hex.
                 if (hasExp) {
                     // two E's
-                    Log.d(TAG, "Два символа 'E', выходим с отрицательным ответом.");
+                    L.d(TAG, "Два символа 'E', выходим с отрицательным ответом.");
                     return false;//Если два символа 'E', то выходим с отрицательным ответом
                 }
                 if (!foundDigit) {
-                    Log.d(TAG, "Нашли 'E', но цифр еще небыло, выходим с отрицательным ответом.");
+                    L.d(TAG, "Нашли 'E', но цифр еще небыло, выходим с отрицательным ответом.");
                     return false;//Если нашли 'E', но цифр еще небыло, то выходим с отрицательным ответом
                 }
                 hasExp = true;
                 allowSigns = true;//так как нашли 'e' или 'E', то снова разрешаем сиволы знака '+' или '-'
             } else if (chars[i] == '+' || chars[i] == '-') {//Если нашли символы знака '+' или '-'
-                Log.d(TAG, "Нашли символы знака '+' или '-': " + chars[i]);
+                L.d(TAG, "Нашли символы знака '+' или '-': " + chars[i]);
                 if (!allowSigns) {
-                    Log.d(TAG, "Символы знака запрещены, выходим с отрицательным ответом.");
+                    L.d(TAG, "Символы знака запрещены, выходим с отрицательным ответом.");
                     return false;//Если символы знака запрещены, то выходим с отрицательным ответом
                 }
                 allowSigns = false;//Запрещаем символы знака '+' или '-'
                 foundDigit = false; // we need a digit after the E Нам нужна цифра после E
             } else {
-                Log.d(TAG, "Ничего подходящего не нашли, выходим с отрицательным ответом.");
+                L.d(TAG, "Ничего подходящего не нашли, выходим с отрицательным ответом.");
                 return false;// Если ничего подходящего не нашли, то выходим с отрицательным ответом
             }
             i++;
         }
         if (i < chars.length) {//Если остался еще символ
             if (chars[i] >= '0' && chars[i] <= '9') {//остался символ цифры
-                Log.d(TAG, "Нашли цифру: " + chars[i]);
+                L.d(TAG, "Нашли цифру: " + chars[i]);
                 if (SystemUtils.IS_JAVA_1_6 && hasLeadingPlusSign && !hasDecPoint) {//Если у нас JAVA 1.6 и если первый символ '+' и если нет десятичной точки,
-                    Log.d(TAG, "У нас JAVA 1.6 и первый символ '+' и нет десятичной точки, выходим с отрицательным ответом.");
+                    L.d(TAG, "У нас JAVA 1.6 и первый символ '+' и нет десятичной точки, выходим с отрицательным ответом.");
                     return false;// то выходим с отрицательным ответом
                 }
                 // no type qualifier, OK
-                Log.d(TAG, "Все в порядке - число пригодно, число без указаня типа.");
+                L.d(TAG, "Все в порядке - число пригодно, число без указаня типа.");
                 return true;//Все в порядке - число пригодно, число без указаня типа
             }
             if (chars[i] == 'e' || chars[i] == 'E') {//Если нашли 'e' или 'E'
-                Log.d(TAG, "Нашли 'e' или 'E': " + chars[i]);
+                L.d(TAG, "Нашли 'e' или 'E': " + chars[i]);
                 // can't have an E at the last byte
-                Log.d(TAG, "Не может быть E в последнем символе, выходим с отрицательным ответом.");
+                L.d(TAG, "Не может быть E в последнем символе, выходим с отрицательным ответом.");
                 return false;// то выходим с отрицательным ответом
             }
             if (chars[i] == '.') {//Если нашли точку
-                Log.d(TAG, "Нашли точку: " + chars[i]);
+                L.d(TAG, "Нашли точку: " + chars[i]);
                 if (hasDecPoint || hasExp) {//Если две точки или точка в экспоненциальной части, то выходим с отрицательным ответом
-                    Log.d(TAG, "Две точки или точка в экспоненциальной части, выходим с отрицательным ответом.");
+                    L.d(TAG, "Две точки или точка в экспоненциальной части, выходим с отрицательным ответом.");
                     // two decimal points or dec in exponent
                     return false;
                 }
                 // single trailing decimal point after non-exponent is ok
                 if (foundDigit) {
-                    Log.d(TAG, "Нашли точку в конце числа без экспоненциальной части, это нормально.");
+                    L.d(TAG, "Нашли точку в конце числа без экспоненциальной части, это нормально.");
                 } else {
-                    Log.d(TAG, "Нашли точку, но не было цифр, это ненормально, выходим с отрицательным ответом.");
+                    L.d(TAG, "Нашли точку, но не было цифр, это ненормально, выходим с отрицательным ответом.");
                 }
                 return foundDigit;//Если нашли точку в конце число без экспоненциальной части, то это нормально, а если нашли точку, но небыло цифр, то это ненормально
             }
@@ -1857,36 +1857,36 @@ public class EditX {
                     || chars[i] == 'D'//
                     || chars[i] == 'f'
                     || chars[i] == 'F')) {
-                Log.d(TAG, "Нашли символ типа с плавающей точкой не после символа 'E': " + chars[i]);
+                L.d(TAG, "Нашли символ типа с плавающей точкой не после символа 'E': " + chars[i]);
                 if (foundDigit) {
-                    Log.d(TAG, "До этого были найдены цифры, возвращаем true.");
+                    L.d(TAG, "До этого были найдены цифры, возвращаем true.");
                 } else {
-                    Log.d(TAG, "До этого не были найдены цифры, возвращаем false.");
+                    L.d(TAG, "До этого не были найдены цифры, возвращаем false.");
                 }
                 return foundDigit;// Возвращаем true если были цифры и возвращем false если цифр небыло
             }
             if (chars[i] == 'l'//Если на конце 'l' или 'L'
                     || chars[i] == 'L') {
-                Log.d(TAG, "Нашли символ типа long: " + chars[i]);
+                L.d(TAG, "Нашли символ типа long: " + chars[i]);
                 // not allowing L with an exponent or decimal point
                 if (foundDigit && !hasExp && !hasDecPoint) {
-                    Log.d(TAG, "До этого были найдены цифры, нет экспоненциальной части и нет десятичной точки - возвращаем true.");
+                    L.d(TAG, "До этого были найдены цифры, нет экспоненциальной части и нет десятичной точки - возвращаем true.");
                 } else {
-                    Log.d(TAG, "До этого не были найдены цифры, либо была найдена экспоненциальная часть, либо есть десятичная точка - возвращаем false.");
+                    L.d(TAG, "До этого не были найдены цифры, либо была найдена экспоненциальная часть, либо есть десятичная точка - возвращаем false.");
                 }
                 return foundDigit && !hasExp && !hasDecPoint;// Возвращаем true если были цифры, нет экспоненциальной части и нет десятичной точки
             }
             // last character is illegal
-            Log.d(TAG, "Последний символ неправильный, возвращаем false.");
+            L.d(TAG, "Последний символ неправильный, возвращаем false.");
             return false;//последний символ нераспознан
         }
         // allowSigns is true iff the val ends in 'E'                               allowSigns = true только после E
         // found digit it to make sure weird stuff like '.' and '1E-' doesn't pass  Возвращаем true только если allowSigns = false и если были цифры,
         //                                                                          чтобы убедиться, что такие странные вещи, как '.' И '1E-' не проходит
         if (!allowSigns && foundDigit) {
-            Log.d(TAG, "Символ знака запрещен и были цифры - возвращаем true.");
+            L.d(TAG, "Символ знака запрещен и были цифры - возвращаем true.");
         } else {
-            Log.d(TAG, "Проверка не пройдена - возвращаем false.");
+            L.d(TAG, "Проверка не пройдена - возвращаем false.");
         }
         return !allowSigns && foundDigit;
     }
@@ -1895,12 +1895,12 @@ public class EditX {
         editX = (EditX) objStore[MainActivity.EDIT_X];
         if (editX == null) {
             editX = new EditX(objStore);
-            Log.d(TAG, "Создали объект editX, который будет отвечать за ввод всего");
+            L.d(TAG, "Создали объект editX, который будет отвечать за ввод всего");
             objStore[MainActivity.EDIT_X] = editX;
         }
-        Log.d(TAG, "Переключаемся в DEC режим.");
+        L.d(TAG, "Переключаемся в DEC режим.");
         double doubleNumber = argX.getArgX();
-        Log.d(TAG, "В DEC режим передаем число: " + doubleNumber);
+        L.d(TAG, "В DEC режим передаем число: " + doubleNumber);
         editX.setNumber(doubleNumber);
     }
 
@@ -1908,12 +1908,12 @@ public class EditX {
         editXBin = (EditXBin) objStore[MainActivity.EDIT_X_BIN];
         if (editXBin == null) {
             editXBin = new EditXBin(objStore);
-            Log.d(TAG, "Создали объект editXBin, который будет отвечать за ввод двоичных чисел");
+            L.d(TAG, "Создали объект editXBin, который будет отвечать за ввод двоичных чисел");
             objStore[MainActivity.EDIT_X_BIN] = editXBin;
         }
-        Log.d(TAG, "Переключаемся в BIN режим.");
+        L.d(TAG, "Переключаемся в BIN режим.");
         double doubleNumber = argX.getArgX();
-        Log.d(TAG, "В BIN режим передаем число: " + doubleNumber);
+        L.d(TAG, "В BIN режим передаем число: " + doubleNumber);
         editXBin.setNumber(doubleNumber);
     }
 
@@ -1921,12 +1921,12 @@ public class EditX {
         editXOct = (EditXOct) objStore[MainActivity.EDIT_X_OCT];
         if (editXOct == null) {
             editXOct = new EditXOct(objStore);
-            Log.d(TAG, "Создали объект editXOct, который будет отвечать за ввод восьмиричных чисел");
+            L.d(TAG, "Создали объект editXOct, который будет отвечать за ввод восьмиричных чисел");
             objStore[MainActivity.EDIT_X_OCT] = editXOct;
         }
-        Log.d(TAG, "Переключаемся в OCT режим.");
+        L.d(TAG, "Переключаемся в OCT режим.");
         double doubleNumber = argX.getArgX();
-        Log.d(TAG, "В OCT режим передаем число: " + doubleNumber);
+        L.d(TAG, "В OCT режим передаем число: " + doubleNumber);
         editXOct.setNumber(doubleNumber);
     }
 
@@ -1934,12 +1934,12 @@ public class EditX {
         editXHex = (EditXHex) objStore[MainActivity.EDIT_X_HEX];
         if (editXHex == null) {
             editXHex = new EditXHex(objStore);
-            Log.d(TAG, "Создали объект editXHex, который будет отвечать за ввод шестнадцатиричных чисел");
+            L.d(TAG, "Создали объект editXHex, который будет отвечать за ввод шестнадцатиричных чисел");
             objStore[MainActivity.EDIT_X_HEX] = editXHex;
         }
-        Log.d(TAG, "Переключаемся в HEX режим.");
+        L.d(TAG, "Переключаемся в HEX режим.");
         double doubleNumber = argX.getArgX();
-        Log.d(TAG, "В HEX режим передаем число: " + doubleNumber);
+        L.d(TAG, "В HEX режим передаем число: " + doubleNumber);
         editXHex.setNumber(doubleNumber);
     }
 }

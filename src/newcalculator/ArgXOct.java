@@ -18,22 +18,22 @@ public class ArgXOct {
         sign = false;
         editable = true;
         virginity = true;
-        Log.d(TAG, "Создали новый пустой ArgXOct");
+        L.d(TAG, "Создали новый пустой ArgXOct");
     }
 
 //    ArgXOct(long longNumber) {
 //        setNumber(longNumber);
-//        Log.d(TAG, "Создали новый НЕпустой ArgXOct");
+//        L.d(TAG, "Создали новый НЕпустой ArgXOct");
 //    }
 //
 //    ArgXOct(int intNumber) {
 //        setNumber(intNumber);
-//        Log.d(TAG, "Создали новый НЕпустой ArgXOct");
+//        L.d(TAG, "Создали новый НЕпустой ArgXOct");
 //    }
 
     ArgXOct(double doubleNumber) {
         setNumber(doubleNumber);
-        Log.d(TAG, "Создали новый НЕпустой ArgXOct");
+        L.d(TAG, "Создали новый НЕпустой ArgXOct");
     }
 
     public void setNumber(StringBuilder sbNumber) {
@@ -77,30 +77,30 @@ public class ArgXOct {
     public double getDouble() {
         double doubleNumber;
         doubleNumber = (double) getLong();
-        Log.d(TAG, "После преобразования в double получили: " + doubleNumber);
+        L.d(TAG, "После преобразования в double получили: " + doubleNumber);
         return doubleNumber;
     }
 
     public long getLong() {
         long longNumber = 0;
-        Log.d(TAG, "В ArgXOct лежит: " + number);
+        L.d(TAG, "В ArgXOct лежит: " + number);
         try {
             longNumber = Long.parseLong(number.toString(), 8);
         } catch (Exception e) {
 //            customToast.setToastText("Произошла неизвестная ошибка: " + e);
 //            customToast.show();
-            Log.d(TAG, "При старте приложения произошла ошибка: " + e);
+            L.d(TAG, "При старте приложения произошла ошибка: " + e);
             StackTraceElement[] stackTraceElements = e.getStackTrace();
 
             for (int i = 0; i < stackTraceElements.length; i++) {
-                Log.d(TAG, i + ": " + stackTraceElements[i].toString());
+                L.d(TAG, i + ": " + stackTraceElements[i].toString());
             }
         }
 
         if (isSign()) {
             longNumber = -1 * longNumber;
         }
-        Log.d(TAG, "После преобразования в long получили: " + longNumber);
+        L.d(TAG, "После преобразования в long получили: " + longNumber);
         return longNumber;
     }
 
@@ -120,7 +120,7 @@ public class ArgXOct {
 
     public void setSign(boolean sign) {
         this.sign = sign;
-        Log.d(TAG, "sign: " + this.sign);
+        L.d(TAG, "sign: " + this.sign);
     }
 
     boolean isEditable() {

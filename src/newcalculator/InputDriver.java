@@ -58,13 +58,13 @@ public class InputDriver {
         protocol = (ProtocolJFrame) objStore[MainActivity.PROTOCOL];
         for (int i = 0; i < objStore.length; i++) {
 
-            Log.d(TAG, "В objStore[" + i + "]: " + objStore[i]);
+            L.d(TAG, "В objStore[" + i + "]: " + objStore[i]);
         }
         inDevelopToast = new CustomToast(activity, "В разработке");
         emptyFunction = new CustomToast(activity, "Здесь ничего нет.");
         sdModeToast = new CustomToast(activity, "Не работает в режиме статистических расчетов.");
 
-        Log.d(TAG, "Создали новый InputDriver");
+        L.d(TAG, "Создали новый InputDriver");
     }
 
     void buttonShift() {
@@ -3091,7 +3091,7 @@ public class InputDriver {
                 sb.append(editXHex.copyToClipboard());
                 break;
         }
-        Log.d(TAG, "В буфер обмена отправляю: " + sb);
+        L.d(TAG, "В буфер обмена отправляю: " + sb);
         protocol.println(TAG + "В буфер обмена отправляю: " + sb);
         return sb;
     }
@@ -3477,14 +3477,14 @@ public class InputDriver {
 //            status.onError();
 //            inDevelopToast.setToastText("Произошло пользовательское арифметическое исключение. " + e.getReason());
 //            inDevelopToast.show();
-//            Log.d(TAG, "Произошло пользовательское арифметическое исключение. " + e.getReason());
+//            L.d(TAG, "Произошло пользовательское арифметическое исключение. " + e.getReason());
 //            status.offShift();
 //            status.offHyp();
 //            status.onError();
 //        } catch (ArithmeticException e) {
 //            inDevelopToast.setToastText("Произошло арифметическое исключение. " + e);
 //            inDevelopToast.show();
-//            Log.d(TAG, "Произошло арифметическое исключение. " + e);
+//            L.d(TAG, "Произошло арифметическое исключение. " + e);
 //            status.offShift();
 //            status.offHyp();
 //            status.onError();
@@ -3505,7 +3505,7 @@ public class InputDriver {
 //            }
 ////            inDevelopToast.setToastText("Произошла ошибка формата числа. " + e.getMessage().substring(e.getMessage().indexOf('"') + 1, e.getMessage().lastIndexOf('.')));
 //            inDevelopToast.show();
-//            Log.d(TAG, "Произошла ошибка формата числа. " + e.getMessage().substring(e.getMessage().indexOf('"') + 1, e.getMessage().lastIndexOf('.')));
+//            L.d(TAG, "Произошла ошибка формата числа. " + e.getMessage().substring(e.getMessage().indexOf('"') + 1, e.getMessage().lastIndexOf('.')));
 //
 //            status.offShift();
 //            status.offHyp();
@@ -3513,12 +3513,12 @@ public class InputDriver {
 //        } catch (Exception e) {
 //            inDevelopToast.setToastText("Произошла неизвестная ошибка Exception. " + e);
 //            inDevelopToast.show();
-//            Log.d(TAG, "Произошла неизвестная ошибка. " + e);
+//            L.d(TAG, "Произошла неизвестная ошибка. " + e);
 //
 //            StackTraceElement[] stackTraceElements = e.getStackTrace();
 //
 //            for (int i = 0; i < stackTraceElements.length; i++) {
-//                Log.d(TAG, i + ": " + stackTraceElements[i].toString());
+//                L.d(TAG, i + ": " + stackTraceElements[i].toString());
 //            }
 //            status.offShift();
 //            status.offHyp();

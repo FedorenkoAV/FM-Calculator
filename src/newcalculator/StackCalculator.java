@@ -98,7 +98,7 @@ class StackCalculator {
         this.angle = angle;
         this.protocol = protocol;
         restart();
-        Log.d(TAG, "Создали новый StackCalculator");
+        L.d(TAG, "Создали новый StackCalculator");
     }
 
     void restart() {
@@ -247,11 +247,11 @@ class StackCalculator {
         n = (int) a1;
 
         if (n < 0) {
-            Log.d(TAG, "Отрицательное число");
+            L.d(TAG, "Отрицательное число");
             throw new MyExceptions(MyExceptions.NEGATIVE);
         }
         if (n > 170) {
-            Log.d(TAG, "Слишком большое число для вычисления факториала");
+            L.d(TAG, "Слишком большое число для вычисления факториала");
             throw new MyExceptions(MyExceptions.TOO_BIG);
         }
         a1 = 1;
@@ -302,23 +302,23 @@ class StackCalculator {
      * @return
      */
     private double fromRad(double rad, int angleUnit) throws MyExceptions {
-        Log.d(TAG, "Переводим угол из радиан в");
+        L.d(TAG, "Переводим угол из радиан в");
         double angle = 0;
         switch (angleUnit) {
             case Angle.RAD:
-                Log.d(TAG, "радианы");
+                L.d(TAG, "радианы");
                 angle = rad;
                 break;
             case Angle.DEG:
-                Log.d(TAG, "градусы");
+                L.d(TAG, "градусы");
                 angle = radToDeg(rad);
                 break;
             case Angle.GRAD:
-                Log.d(TAG, "грады");
+                L.d(TAG, "грады");
                 angle = radToGrad(rad);
                 break;
         }
-        Log.d(TAG, rad + " радиан = " + angle + " градусов или градов");
+        L.d(TAG, rad + " радиан = " + angle + " градусов или градов");
         return angle;
     }
 
@@ -441,7 +441,7 @@ class StackCalculator {
         protocol.print("sin(" + a1 + angle.toString(angleUnit) + ") = ");
         a1 = toRad(a1, angleUnit);
         double res = Math.sin(a1);
-        Log.d(TAG, "sin(" + a1 + angleUnit + ") = " + res);
+        L.d(TAG, "sin(" + a1 + angleUnit + ") = " + res);
         protocol.println(res);
         result = true;
         return res;
@@ -475,7 +475,7 @@ class StackCalculator {
         protocol.print("cos(" + a1 + angle.toString(angleUnit) + ") = ");
         a1 = toRad(a1, angleUnit);
         double res = Math.cos(a1);
-        Log.d(TAG, "cos(" + a1 + angleUnit + ") = " + res);
+        L.d(TAG, "cos(" + a1 + angleUnit + ") = " + res);
         protocol.println(res);
         result = true;
         return res;
@@ -509,7 +509,7 @@ class StackCalculator {
         protocol.print("tan(" + a1 + angle.toString(angleUnit) + ") = ");
         a1 = toRad(a1, angleUnit);
         double res = Math.tan(a1);
-        Log.d(TAG, "tan(" + a1 + angleUnit + ") = " + res);
+        L.d(TAG, "tan(" + a1 + angleUnit + ") = " + res);
         protocol.println(res);
         result = true;
         return res;
@@ -573,9 +573,9 @@ class StackCalculator {
         try {
             doubleNumber = Double.parseDouble(strNumber.toString());
         } catch (Exception ex) {
-            Log.d(TAG, "Ошибка перевода строки в число");
+            L.d(TAG, "Ошибка перевода строки в число");
         }
-        Log.d(TAG, "После превода строки в число, получилось" + doubleNumber);
+        L.d(TAG, "После превода строки в число, получилось" + doubleNumber);
         return doubleNumber;
     }
 
@@ -592,23 +592,23 @@ class StackCalculator {
         * */
         protocol.println("Переводим градусы в ГГ.ММССсс");
         double degreeInt = argX.getMantissaIntegerPartinDouble();
-        Log.d(TAG, "Целая часть градусов = " + degreeInt);
+        L.d(TAG, "Целая часть градусов = " + degreeInt);
 
         double degreeFrac = argX.getMantissaFractionalPartinDouble();
-        Log.d(TAG, "Дробная часть градусов = " + degreeFrac);
+        L.d(TAG, "Дробная часть градусов = " + degreeFrac);
 
         double min = degreeFrac * 60;
-        Log.d(TAG, "Минуты = " + degreeFrac + " * 60 = " + min);
+        L.d(TAG, "Минуты = " + degreeFrac + " * 60 = " + min);
 
         ArgX minArgX = new ArgX(min);
         double minInt = minArgX.getMantissaIntegerPartinDouble();
-        Log.d(TAG, "Целая часть минут = " + minInt);
+        L.d(TAG, "Целая часть минут = " + minInt);
 
         double minFrac = minArgX.getMantissaFractionalPartinDouble();
-        Log.d(TAG, "Дробная часть минут = " + minFrac);
+        L.d(TAG, "Дробная часть минут = " + minFrac);
 
         double sec = minFrac * 60;
-        Log.d(TAG, "Секунды = " + minFrac + " * 60 = " + sec);
+        L.d(TAG, "Секунды = " + minFrac + " * 60 = " + sec);
 
         double degree = degreeInt + minInt / 100 + sec / 10000;
         protocol.println(argX.getArgX() + "⁰ = " + degreeInt + "⁰ " + minInt + "′ " + sec + "″");
@@ -624,7 +624,7 @@ class StackCalculator {
         * 5. Выделяем из дробной части мантиссы оставшиеся символы - это будут милисекунды
         * */
 
-        Log.d(TAG, "Переводим градусы, минуты, секунды и миллисекунды в градусы.");
+        L.d(TAG, "Переводим градусы, минуты, секунды и миллисекунды в градусы.");
         protocol.println("Переводим ГГ.ММССсс в градусы");
         double degree;
         double minD;
@@ -640,30 +640,30 @@ class StackCalculator {
         mantissaFractionalPartLength = argX.getMantissaFractionalPart().length();
 
         if (mantissaFractionalPartLength < 5) {
-            Log.d(TAG, "Дробная часть мантиссы, всего " + mantissaFractionalPartLength + " символов, добавим нулей.");
+            L.d(TAG, "Дробная часть мантиссы, всего " + mantissaFractionalPartLength + " символов, добавим нулей.");
             argX.setIsMantissaFractionalPart(true);
             argX.setMantissaFractionalPart(argX.getMantissaFractionalPart().append("00000"));
             mantissaFractionalPartLength = argX.getMantissaFractionalPart().length();
-            Log.d(TAG, "Теперь дробная часть мантиссы " + argX.getMantissaFractionalPart());
+            L.d(TAG, "Теперь дробная часть мантиссы " + argX.getMantissaFractionalPart());
         }
 
         degree = argX.getMantissaIntegerPartinDouble();
         if (argX.isSign()) {
             degree = -degree;
         }
-        Log.d(TAG, "Градусы: " + degree);
+        L.d(TAG, "Градусы: " + degree);
 
         minSB.append(argX.getMantissaFractionalPart(), 0, 2);
         minD = stringToDouble(minSB);
-        Log.d(TAG, "Минуты: " + minD);
+        L.d(TAG, "Минуты: " + minD);
 
         secSB.append(argX.getMantissaFractionalPart(), 2, 4);
         secD = stringToDouble(secSB);
-        Log.d(TAG, "Секунды: " + secD);
+        L.d(TAG, "Секунды: " + secD);
 
         msecSB.append(argX.getMantissaFractionalPart(), 4, mantissaFractionalPartLength);
         msecD = stringToDouble(msecSB);
-        Log.d(TAG, "Миллисекунды: " + msecD);
+        L.d(TAG, "Миллисекунды: " + msecD);
         protocol.print((int) degree + "⁰" + minSB + "′" + secSB + msecSB.substring(1, msecSB.length()) + "′′" + " -> ");
         degree = (degree + minD / 60 + (secD + msecD) / 3600);
         protocol.println(degree + "⁰");
@@ -721,7 +721,7 @@ class StackCalculator {
         secondOp = number;
         protocol.setSecondOp(number);
         //jTextFieldSecondOp.setText(doubleToString(secondOpToProtocol));
-        Log.d(TAG, "Сейчас второй операнд: " + secondOp);
+        L.d(TAG, "Сейчас второй операнд: " + secondOp);
     }
 
     private double autoConstantCalculator(double currentNumber) throws MyExceptions {
@@ -757,7 +757,7 @@ class StackCalculator {
                 protocol.println("" + currentNumber);
                 break;
             case NOP:
-                Log.d(TAG, "Не задано арифмитическое действие. Ничего не делаю.");
+                L.d(TAG, "Не задано арифмитическое действие. Ничего не делаю.");
                 break;
         }
         return currentNumber;
@@ -773,7 +773,7 @@ class StackCalculator {
         } else {
             secondOpToProtocol(0.0);
         }
-        Log.d(TAG, "Восстановлены старые стеки операций и чисел");
+        L.d(TAG, "Восстановлены старые стеки операций и чисел");
     }
 
     boolean isNumberStackEmpty() {
@@ -808,7 +808,7 @@ class StackCalculator {
         autoConstantOperationStack.push(autoConstantOperation);
         numberStack = new Stack<>();
         operationStack = new Stack<>();
-        Log.d(TAG, "Созданы новые стеки операций и чисел");
+        L.d(TAG, "Созданы новые стеки операций и чисел");
     }
 
     void restoreStacks() {
@@ -826,10 +826,10 @@ class StackCalculator {
     double putInStack(double currentNumber, int currentOperation) {
         numberStack.push(currentNumber);
         secondOpToProtocol(currentNumber);
-        Log.d(TAG, "В стек чисел заношу: " + currentNumber);
+        L.d(TAG, "В стек чисел заношу: " + currentNumber);
         operationStack.push(currentOperation);
-        Log.d(TAG, "В стек операций заношу: " + operations[currentOperation]);
-        Log.d(TAG, "");
+        L.d(TAG, "В стек операций заношу: " + operations[currentOperation]);
+        L.d(TAG, "");
         return currentNumber;
     }
 
@@ -843,8 +843,8 @@ class StackCalculator {
         if (!numberStack.empty() && !operationStack.empty()) {
             autoConstantOperation = operationStack.pop();
             autoConstant(numberStack.pop());
-            Log.d(TAG, "После setAutoConstant размер стека операций = " + operationStack.size());
-            Log.d(TAG, "После setAutoConstant размер стека чисел = " + numberStack.size());
+            L.d(TAG, "После setAutoConstant размер стека операций = " + operationStack.size());
+            L.d(TAG, "После setAutoConstant размер стека чисел = " + numberStack.size());
         }
         result = false;
         return currentNumber;
@@ -867,29 +867,29 @@ class StackCalculator {
     }
 
     double calc(double currentNumber, int currentOperation) throws MyExceptions {
-        Log.d(TAG, "stackCalculator() запущен");
+        L.d(TAG, "stackCalculator() запущен");
         int prevOperation;
         double prevNumber;
         int currentPrioritet;
         int prevPrioritet;
 
-        Log.d(TAG, "В начале calc размер стека операций = " + operationStack.size());
-        Log.d(TAG, "В начале calc размер стека чисел = " + numberStack.size());
+        L.d(TAG, "В начале calc размер стека операций = " + operationStack.size());
+        L.d(TAG, "В начале calc размер стека чисел = " + numberStack.size());
         prevOperation = operationStack.peek(); // Смотрим какая была предыдущая операция
         currentPrioritet = currentOperation >>> 1; //Вычисляем приоритет
         prevPrioritet = prevOperation >>> 1; //Вычисляем приоритет
         prevNumber = numberStack.peek();
-        Log.d(TAG, "Предыдущая операция была: " + operations[prevOperation] + " ее приоритет: " + prevPrioritet);
-        Log.d(TAG, "Текущая операция: " + operations[currentOperation] + " ее приоритет: " + currentPrioritet);
-        Log.d(TAG, "Первое число: " + prevNumber);
-        Log.d(TAG, "Второе число: " + currentNumber);
+        L.d(TAG, "Предыдущая операция была: " + operations[prevOperation] + " ее приоритет: " + prevPrioritet);
+        L.d(TAG, "Текущая операция: " + operations[currentOperation] + " ее приоритет: " + currentPrioritet);
+        L.d(TAG, "Первое число: " + prevNumber);
+        L.d(TAG, "Второе число: " + currentNumber);
         if (prevPrioritet < currentPrioritet) { // Пункт №2 если предыдущая операция более низкого приоритета - занести в стек число и операцию
-            Log.d(TAG, "У текущей операции приоритет выше, чем у предыдущей, заношу все в стек");
+            L.d(TAG, "У текущей операции приоритет выше, чем у предыдущей, заношу все в стек");
             numberStack.push(currentNumber);
             secondOpToProtocol(currentNumber);
-            Log.d(TAG, "В стек чисел заношу: " + currentNumber);
+            L.d(TAG, "В стек чисел заношу: " + currentNumber);
             operationStack.push(currentOperation);
-            Log.d(TAG, "В стек операций заношу: " + operations[currentOperation]);
+            L.d(TAG, "В стек операций заношу: " + operations[currentOperation]);
             return currentNumber;
         }
         // Здесь уже ясно, что предыдущая операция такого же или более высокого приоритета, т.е. Пункт №3
@@ -931,26 +931,26 @@ class StackCalculator {
         if (!operationStack.empty()) { //Стек будет не пуст, если предыдущая операция оказалась более низкого приоритета
             prevOperation = operationStack.peek();
             prevPrioritet = prevOperation >>> 1;
-            Log.d(TAG, "Предыдущая операция была: " + operations[prevOperation]);
-            Log.d(TAG, "Её приоритет: " + prevPrioritet);
+            L.d(TAG, "Предыдущая операция была: " + operations[prevOperation]);
+            L.d(TAG, "Её приоритет: " + prevPrioritet);
         }
 
-        Log.d(TAG, "В конце calc размер стека операций = " + operationStack.size());
-        Log.d(TAG, "В конце calc размер стека чисел = " + numberStack.size());
-        Log.d(TAG, "" + currentNumber);
+        L.d(TAG, "В конце calc размер стека операций = " + operationStack.size());
+        L.d(TAG, "В конце calc размер стека чисел = " + numberStack.size());
+        L.d(TAG, "" + currentNumber);
 
         if (currentOperation != NOP) { //Если была любая операция кроме NOP, то заносим значения в стек чисел и в стек операций
-            Log.d(TAG, "Вычисления еще не окончены. Заношу значения в стек чисел и в стек операций");
+            L.d(TAG, "Вычисления еще не окончены. Заношу значения в стек чисел и в стек операций");
             numberStack.push(currentNumber);
             secondOpToProtocol(currentNumber);
-            Log.d(TAG, "В стек чисел заношу: " + currentNumber);
+            L.d(TAG, "В стек чисел заношу: " + currentNumber);
             operationStack.push(currentOperation);
-            Log.d(TAG, "В стек операций заношу: " + operations[currentOperation]);
-            Log.d(TAG, "");
+            L.d(TAG, "В стек операций заношу: " + operations[currentOperation]);
+            L.d(TAG, "");
         }
         //printCalc(currentNumber);
-        Log.d(TAG, "Расчет окончен.");
-        Log.d(TAG, "------------------------------------------------");
+        L.d(TAG, "Расчет окончен.");
+        L.d(TAG, "------------------------------------------------");
         result = true;
         return currentNumber;
     }

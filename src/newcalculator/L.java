@@ -22,7 +22,7 @@ import java.net.UnknownHostException;
 /**
  * Mock Log implementation for testing on non android host.
  */
-public final class Log {
+public final class L {
 
     /**
      * Priority constant for the println method; use Log.v.
@@ -30,7 +30,7 @@ public final class Log {
     public static final int VERBOSE = 2;
 
     /**
-     * Priority constant for the println method; use Log.d.
+     * Priority constant for the println method; use L.d.
      */
     public static final int DEBUG = 3;
 
@@ -58,7 +58,7 @@ public final class Log {
     static boolean isDebug2 = (java.lang.management.ManagementFactory.getRuntimeMXBean().getInputArguments().toString().contains("[]"));
 //    static boolean isDebug = false;
     
-    private Log() {
+    private L() {
     }
 
     /**

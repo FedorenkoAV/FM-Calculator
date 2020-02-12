@@ -22,17 +22,24 @@ public class Preferences {
     Wini ini = null;
 
     Preferences() {
+        boolean newFile = false;
         if (!paramsFile.exists()) {
             try {
                 paramsFile.createNewFile();
             } catch (IOException ex) {
             }
+            newFile = true;
         }
         try {
             ini = new Wini(new File(paramsFile.getName()));
         } catch (IOException ex) {
         }
-        Log.d(TAG, "Создали новый Preferences");
+        if (newFile) {
+            setAngleUnitPrivate(0);
+            setMemoryPrivate(0.0);
+            setFixModePrivate(-1);
+        }
+        L.d(TAG, "Создали новый Preferences");
     }
 
     double getMemory() {
@@ -40,8 +47,12 @@ public class Preferences {
     }
 
     void setMemory(double memoryValue) {
+        setMemoryPrivate (memoryValue);
+    }
+    
+    private void setMemoryPrivate(double memoryValue) {
         ini.put("Memory", "Memory", memoryValue);
-        Log.d(TAG, "Занесли значение памяти в настройки: " + memoryValue);
+        L.d(TAG, "Занесли значение памяти в настройки: " + memoryValue);
         store();
     }
 
@@ -50,8 +61,12 @@ public class Preferences {
     }
 
     void setFixMode(int fixModeScale) {
+        setFixModePrivate (fixModeScale);
+    }
+    
+    private void setFixModePrivate(int fixModeScale) {
         ini.put("FixMode", "FixMode", fixModeScale);
-        Log.d(TAG, "Занесли значение режима округления в настройки: " + fixModeScale);
+        L.d(TAG, "Занесли значение режима округления в настройки: " + fixModeScale);
         store();
     }
 
@@ -60,8 +75,12 @@ public class Preferences {
     }
 
     void setAngleUnit(int angleUnit) {
+        setAngleUnitPrivate (angleUnit);
+    }
+    
+    private void setAngleUnitPrivate(int angleUnit) {
         ini.put("AngleUnit", "AngleUnit", angleUnit);
-        Log.d(TAG, "Занесли значение едениц измерения угла в настройки: " + angleUnit);
+        L.d(TAG, "Занесли значение едениц измерения угла в настройки: " + angleUnit);
         store();
     }
 
@@ -71,7 +90,7 @@ public class Preferences {
 
     void setXCoord(int xCoord) {
         ini.put("Coordinates", "x", xCoord);
-        Log.d(TAG, "Занесли значение едениц измерения угла в настройки: " + xCoord);
+        L.d(TAG, "Занесли значение едениц измерения угла в настройки: " + xCoord);
         store();
     }
 
@@ -81,7 +100,7 @@ public class Preferences {
 
     void setYCoord(int yCoord) {
         ini.put("Coordinates", "y", yCoord);
-        Log.d(TAG, "Занесли значение едениц измерения угла в настройки: " + yCoord);
+        L.d(TAG, "Занесли значение едениц измерения угла в настройки: " + yCoord);
         store();
     }
 
@@ -90,6 +109,6 @@ public class Preferences {
             ini.store();
         } catch (IOException ex) {
         }
-        Log.d(TAG, "Зафиксировали изменения в файле настроек.");
+        L.d(TAG, "Зафиксировали изменения в файле настроек.");
     }
 }

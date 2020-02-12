@@ -99,7 +99,7 @@ public class MainActivity extends javax.swing.JFrame {
      */
     public MainActivity() {
         System.out.println("Это релизная версия. Логов не будет.");
-        Log.d(TAG, "Начнем");
+        L.d(TAG, "Начнем");
         modeFont = MODE_FONT;
 
         // Теперь создаем рабочие шрифты из тех, что лежат в ресурсах
@@ -130,30 +130,30 @@ public class MainActivity extends javax.swing.JFrame {
 
         //          Создаем объект Preferences который будет читать и записывать настройки в файл
         preferences = new Preferences();
-        Log.d(TAG, "Создали объект preferences, который будет читать и записывать настройки в файл." + preferences);
+        L.d(TAG, "Создали объект preferences, который будет читать и записывать настройки в файл." + preferences);
         objStore[PREFERENCES] = preferences;
         xCoord = preferences.getXCoord();
         int screenSizeWidth = getScreenSizeWidth();
         int screenSizeHeight = getScreenSizeHeight();
-        Log.d(TAG, "screenSizeHeight = " + screenSizeHeight);
-        Log.d(TAG, "screenSizeWidth = " + screenSizeWidth);
+        L.d(TAG, "screenSizeHeight = " + screenSizeHeight);
+        L.d(TAG, "screenSizeWidth = " + screenSizeWidth);
         if (xCoord >= screenSizeWidth) {
             xCoord = getCentrWidth();
-            Log.d(TAG, "Координата X выходит за гницы экрана, меняем ее на центр экрана: " + xCoord);
+            L.d(TAG, "Координата X выходит за гницы экрана, меняем ее на центр экрана: " + xCoord);
         }
         yCoord = preferences.getYCoord();
         if (yCoord >= screenSizeHeight) {
             yCoord = getCentrHeight();
-            Log.d(TAG, "Координата Y выходит за гницы экрана, меняем ее на центр экрана: " + yCoord);
+            L.d(TAG, "Координата Y выходит за гницы экрана, меняем ее на центр экрана: " + yCoord);
         }
         startPoint = new Point(xCoord, yCoord);
-        Log.d(TAG, "Стартовая точка: " + startPoint);
+        L.d(TAG, "Стартовая точка: " + startPoint);
 
         initComponents(); // Рисуем все
 
 //        Activity activity = MainActivity.this;
 //        Activity activity = new Activity();
-        Log.d(TAG, "Activity activity = MainActivity.this создана.");
+        L.d(TAG, "Activity activity = MainActivity.this создана.");
 
         objStore[MAIN_ACTIVITY] = MainActivity.this;
 
@@ -161,7 +161,7 @@ public class MainActivity extends javax.swing.JFrame {
         customToast = new CustomToast(this, "В разработке");
 
         objStore[TOAST] = customToast;
-        Log.d(TAG, "Создали свой тост");
+        L.d(TAG, "Создали свой тост");
 
         protocol = new ProtocolJFrame(this);
         objStore[PROTOCOL] = protocol;
@@ -183,49 +183,49 @@ public class MainActivity extends javax.swing.JFrame {
         StatusDisplay statusDisplay = new StatusDisplay(statusDisplayLabStore);
         objStore[STATUS_DISPLAY] = statusDisplay;
 
-        Log.d(TAG, "Создали объект statusDisplay, который будет управлять отображением меток статуса и режима работы на дисплее");
+        L.d(TAG, "Создали объект statusDisplay, который будет управлять отображением меток статуса и режима работы на дисплее");
 
 //        Создаем объект status, который будет менять статусы и режимы работы
         status = new Status(statusDisplay, btnStore);
-        Log.d(TAG, "Создали объект status, который будет менять статусы и режимы работы" + status);
+        L.d(TAG, "Создали объект status, который будет менять статусы и режимы работы" + status);
         objStore[STATUS] = status;
 //        Создаем объект mode, который будет менять режим работы на CPLX и SD
         mode = new Mode(statusDisplay);
-        Log.d(TAG, "Создали объект mode, который будет менять режим работы на CPLX и SD");
+        L.d(TAG, "Создали объект mode, который будет менять режим работы на CPLX и SD");
         objStore[MODE] = mode;
 
 //        Создаем объект angle, который будет менять удуницы измерения углов
         angle = new Angle(preferences, statusDisplay);
-        Log.d(TAG, "Создали объект angle, который будет менять удуницы измерения углов");
+        L.d(TAG, "Создали объект angle, который будет менять удуницы измерения углов");
         objStore[ANGLE] = angle;
 
 //        Создаем объект memoryStore, который будет работать с памятью
         memoryStore = new MemoryStore(preferences, status, protocol);
-        Log.d(TAG, "Создали объект memoryStore, который будет работать с памятью");
+        L.d(TAG, "Создали объект memoryStore, который будет работать с памятью");
         objStore[MEMORY] = memoryStore;
 
 //        Создаем объект mainDisplay, который будет выводить цифровую информацию
         mainDisplay = new MainDisplay(jTextField1, preferences);
-        Log.d(TAG, "Создали объект mainDisplay, который будет выводить цифровую информацию");
+        L.d(TAG, "Создали объект mainDisplay, который будет выводить цифровую информацию");
         objStore[MAIN_DISPLAY] = mainDisplay;
 
 //        Создаем объект stackCalculator, который будет выполнять все вычисления
         stackCalculator = new StackCalculator(angle, protocol);
-        Log.d(TAG, "Создали объект stackCalculator, который будет выполнять все вычисления");
+        L.d(TAG, "Создали объект stackCalculator, который будет выполнять все вычисления");
         objStore[STACK_CALCULATOR] = stackCalculator;
 
 //        Создаем объект editX, который будет отвечать за ввод всего
         editX = new EditX(objStore);
-        Log.d(TAG, "Создали объект editX, который будет отвечать за ввод всего");
+        L.d(TAG, "Создали объект editX, который будет отвечать за ввод всего");
         objStore[EDIT_X] = editX;
 
 //        Создаем объект - обработчик нажатия кнопок и вешаем его на кнопки
         inputDriver = new InputDriver(objStore); //инициализируем clickListener
-        Log.d(TAG, "Создали объект - обработчик нажатия кнопок и вешаем его на кнопки");
+        L.d(TAG, "Создали объект - обработчик нажатия кнопок и вешаем его на кнопки");
         objStore[INPUT_DRIVER] = inputDriver;
         for (int i = 0; i < objStore.length; i++) {
 
-            Log.d(TAG, "В objStore[" + i + "]: " + objStore[i]);
+            L.d(TAG, "В objStore[" + i + "]: " + objStore[i]);
         }
 
         jButtonOnC.doClick(); // Нажимаем кнопку OnC        
@@ -254,7 +254,7 @@ public class MainActivity extends javax.swing.JFrame {
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         StringSelection clipData;
         String sb = inputDriver.copyToClipboard().toString();
-        Log.d(TAG, "В буфер обмена отправляю: " + sb);
+        L.d(TAG, "В буфер обмена отправляю: " + sb);
         protocol.println(TAG + "MainActivity. В буфер обмена отправляю: " + sb);
         clipData = new StringSelection(sb);
         clipboard.setContents(clipData, clipData);
@@ -306,7 +306,7 @@ public class MainActivity extends javax.swing.JFrame {
 //            customToast.setToastText("Произошло пользовательское арифметическое исключение. " + e.getReason());
         customToast.setToastText(e.getReason() + e.getMsg());
         customToast.show();
-        Log.d(TAG, "Произошло пользовательское арифметическое исключение. " + e.getReason());
+        L.d(TAG, "Произошло пользовательское арифметическое исключение. " + e.getReason());
         status.offShift();
         status.offHyp();
 //            status.onError();        
@@ -315,7 +315,7 @@ public class MainActivity extends javax.swing.JFrame {
     private void arithmeticExceptionDispatcher(ArithmeticException e) {
         customToast.setToastText("Произошло арифметическое исключение. " + e);
         customToast.show();
-        Log.d(TAG, "Произошло арифметическое исключение. " + e);
+        L.d(TAG, "Произошло арифметическое исключение. " + e);
         status.offShift();
         status.offHyp();
         status.onError();
@@ -336,7 +336,7 @@ public class MainActivity extends javax.swing.JFrame {
         }
 //            customToast.setToastText("Произошла ошибка формата числа. " + e.getMessage().substring(e.getMessage().indexOf('"') + 1, e.getMessage().lastIndexOf('.')));
         customToast.show();
-        Log.d(TAG, "Произошла ошибка формата числа. " + e.getMessage().substring(e.getMessage().indexOf('"') + 1, e.getMessage().lastIndexOf('.')));
+        L.d(TAG, "Произошла ошибка формата числа. " + e.getMessage().substring(e.getMessage().indexOf('"') + 1, e.getMessage().lastIndexOf('.')));
         status.offShift();
         status.offHyp();
         status.onError();
@@ -345,12 +345,12 @@ public class MainActivity extends javax.swing.JFrame {
     private void exceptionDispatcher(Exception e) {
         customToast.setToastText("Произошла неизвестная ошибка Exception. " + e);
         customToast.show();
-        Log.d(TAG, "Произошла неизвестная ошибка. " + e);
+        L.d(TAG, "Произошла неизвестная ошибка. " + e);
 
         StackTraceElement[] stackTraceElements = e.getStackTrace();
 
         for (int i = 0; i < stackTraceElements.length; i++) {
-            Log.d(TAG, i + ": " + stackTraceElements[i].toString());
+            L.d(TAG, i + ": " + stackTraceElements[i].toString());
         }
         status.offShift();
         status.offHyp();
@@ -512,7 +512,7 @@ public class MainActivity extends javax.swing.JFrame {
         setBackground(new java.awt.Color(50, 50, 58));
         setIconImages(imageList);
         setLocation(startPoint);
-        setMinimumSize(new java.awt.Dimension(346, 700));
+        setMinimumSize(new java.awt.Dimension(320, 700));
         setPreferredSize(new java.awt.Dimension(346, 500));
         setResizable(false);
         addFocusListener(new java.awt.event.FocusAdapter() {
@@ -2607,7 +2607,7 @@ public class MainActivity extends javax.swing.JFrame {
 
     private void formWindowDeiconified(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowDeiconified
         // TODO add your handling code here:
-//        Log.d(TAG, "WindowDeiconified");
+//        L.d(TAG, "WindowDeiconified");
 
     }//GEN-LAST:event_formWindowDeiconified
 
@@ -2826,7 +2826,7 @@ public class MainActivity extends javax.swing.JFrame {
 
     private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
         // TODO add your handling code here:    
-//        Log.d(TAG, "WindowStateChanged: " + evt);
+//        L.d(TAG, "WindowStateChanged: " + evt);
         if (jCheckBoxMenuItemProtocol.getState() && evt.getNewState() == 0) {
             protocol.setVisible(true);
         }
@@ -2837,15 +2837,15 @@ public class MainActivity extends javax.swing.JFrame {
 
     private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
         // TODO add your handling code here:
-        Log.d(TAG, "WindowGainedFocus: " + evt);
+        L.d(TAG, "WindowGainedFocus: " + evt);
         if (evt.getOppositeWindow() == null) {
-            Log.d(TAG, "OppositeWindow() = null");
+            L.d(TAG, "OppositeWindow() = null");
             if (jCheckBoxMenuItemProtocol.getState() && evt.getNewState() == 0) {
-                Log.d(TAG, "NewState() == 0");
+                L.d(TAG, "NewState() == 0");
                 protocol.setVisible(true);
             }
             if (jCheckBoxMenuItemProtocol.getState() && evt.getNewState() == 1) {
-                Log.d(TAG, "NewState() == 1");
+                L.d(TAG, "NewState() == 1");
                 protocol.setVisible(false);
             }
         }
@@ -2853,18 +2853,18 @@ public class MainActivity extends javax.swing.JFrame {
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
-//        Log.d(TAG, "ComponentShown: " + evt);
+//        L.d(TAG, "ComponentShown: " + evt);
     }//GEN-LAST:event_formComponentShown
 
     private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
         // TODO add your handling code here: 
-//        Log.d(TAG, "FocusGained: " + evt);
+//        L.d(TAG, "FocusGained: " + evt);
     }//GEN-LAST:event_formFocusGained
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-//        Log.d(TAG, "WindowActivated: " + evt.getClass());
-//        Log.d(TAG, "WindowActivated: " + evt.);
+//        L.d(TAG, "WindowActivated: " + evt.getClass());
+//        L.d(TAG, "WindowActivated: " + evt.);
 //                if (jCheckBoxMenuItem1.getState() ) {
 //            protocol.setVisible(true);
 //        }
@@ -2872,12 +2872,12 @@ public class MainActivity extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-//        Log.d(TAG, "WindowOpened: " + evt);
+//        L.d(TAG, "WindowOpened: " + evt);
     }//GEN-LAST:event_formWindowOpened
 
     private void jPanelMainComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanelMainComponentShown
         // TODO add your handling code here:
-//        Log.d(TAG, "ComponentShown: " + evt);        
+//        L.d(TAG, "ComponentShown: " + evt);        
 //        if (jCheckBoxMenuItem1.getState() ) {
 //            protocol.setVisible(true);
 //        }

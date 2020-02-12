@@ -20,14 +20,14 @@ public class MemoryStore {
         this.status = status;
         this.preferences = preferences;
         this.protocol = protocol;
-        Log.d(TAG, "status: " + status);
-        Log.d(TAG, "preferences: " + preferences);
+        L.d(TAG, "status: " + status);
+        L.d(TAG, "preferences: " + preferences);
         displayMemory(getMemory());
     }
 
     double getMemory() {
         double memory = preferences.getMemory();
-        Log.d(TAG, "Получаем значение памяти из настроек: " + memory);
+        L.d(TAG, "Получаем значение памяти из настроек: " + memory);
         protocol.setMemory(memory);
         protocol.println ("Получаем значение из памяти: " + memory);
         return memory;
@@ -38,7 +38,7 @@ public class MemoryStore {
         displayMemory(memory);
         protocol.setMemory(memory);
         protocol.println ("Заносим новое значение в память: " + memory);
-        Log.d(TAG, "Теперь в памяти: " + memory);
+        L.d(TAG, "Теперь в памяти: " + memory);
     }
 
     private void displayMemory(double memory){
