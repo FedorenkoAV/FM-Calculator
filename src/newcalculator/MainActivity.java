@@ -2570,7 +2570,7 @@ public class MainActivity extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentMoved
 
     private void jMenuItemAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAboutActionPerformed
-        AboutJFrame aboutJFrame = new AboutJFrame();
+        AboutJFrame aboutJFrame = new AboutJFrame();        
         aboutJFrame.pack();
         aboutJFrame.setLocationRelativeTo(null);
         aboutJFrame.setVisible(true);
