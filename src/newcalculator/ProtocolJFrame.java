@@ -58,7 +58,7 @@ class ProtocolJFrame extends javax.swing.JFrame {
         this.parent = parent;
 
         initComponents();
-        protocolWindow = this.jTextPaneLog;
+        protocolWindow = this.jTextPaneLog;        
         Properties properties = System.getProperties();
         complexFormat = new ComplexFormat();
         println("Java Runtime Environment version: " + properties.getProperty("java.version"));
@@ -269,7 +269,7 @@ class ProtocolJFrame extends javax.swing.JFrame {
         // Создание стилей
         normal = editor.addStyle(STYLE_normal, null);
         StyleConstants.setFontFamily(normal, FONT_style);
-        StyleConstants.setFontSize(normal, 12);
+        StyleConstants.setFontSize(normal, 12);        
         // Наследуем свойстdо FontFamily
         bold = editor.addStyle(STYLE_heading, normal);
 //        StyleConstants.setFontSize(heading, 12);
@@ -377,6 +377,11 @@ class ProtocolJFrame extends javax.swing.JFrame {
         jPanel3.setFocusable(false);
 
         new SmartScroller(jScrollPane1);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        jTextPaneLog.setEditable(false);
+        jTextPaneLog.setToolTipText("");
+        jTextPaneLog.setAutoscrolls(false);
         jScrollPane1.setViewportView(jTextPaneLog);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
